@@ -21,7 +21,7 @@ export function LocationMap({ lat, lng, label }: { lat: number; lng: number; lab
       // A CSS marker: no image files to serve.
       const icon = L.divIcon({
         className: "",
-        html: '<span class="block size-5 rounded-full border-4 border-white bg-red shadow-lg"></span>',
+        html: '<span class="block size-5 rounded-full border-2 border-night bg-white shadow-lg"></span>',
         iconSize: [20, 20],
         iconAnchor: [10, 10],
       });
@@ -39,7 +39,7 @@ export function LocationMap({ lat, lng, label }: { lat: number; lng: number; lab
       ref={ref}
       role="region"
       aria-label={label}
-      className="z-0 h-80 w-full overflow-hidden bg-mint-soft offset-mint-lg sm:h-[28rem]"
+      className="z-0 h-80 w-full overflow-hidden bg-night sm:h-[26rem] [&_.leaflet-tile-pane]:[filter:grayscale(1)_invert(1)_brightness(0.85)_contrast(0.9)]"
       dir="ltr"
     />
   );

@@ -1,5 +1,12 @@
 export const en = {
-  nav: { home: "Home", menu: "Menu", gallery: "Gallery", about: "About", contact: "Contact" },
+  nav: {
+    home: "Home",
+    menu: "Menu",
+    gallery: "Gallery",
+    about: "About",
+    contact: "Contact",
+    info: "Info",
+  },
   common: {
     otherLanguage: "فارسی",
     skipToContent: "Skip to content",
@@ -17,6 +24,9 @@ export const en = {
     prev: "Previous",
     next: "Next",
     slide: "Photo {n}",
+    pressSpace: "press spacebar",
+    score: "score",
+    photos: "Photos",
   },
   home: {
     title: "A garden cafe in the heart of Tehran",
@@ -36,6 +46,10 @@ export const en = {
     bookText:
       "Call us to reserve a table for breakfast, lunch or dinner. For birthdays and larger groups, tell us ahead and we will prepare the courtyard for you.",
     readMore: "More about us",
+    services: "BREAKFAST | LUNCH | DINNER",
+    legend: { breakfast: "breakfast", food: "food", cafe: "cafe & bar", favourite: "favourite" },
+    subjectToChange: "*Prices may change",
+    journalTitle: "Journal",
   },
   menu: {
     title: "Menu",

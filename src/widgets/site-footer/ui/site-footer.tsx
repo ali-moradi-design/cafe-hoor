@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { Fragment } from "react";
 
-import { formatHours, type Cafe } from "@/entities/cafe";
+import type { Cafe } from "@/entities/cafe";
 import { localePath, type Dictionary, type Locale } from "@/shared/i18n";
 import { localizeDigits } from "@/shared/lib";
 
-/** Quiet footer: name, address, hours, phone and a few links, centred. */
+/** One row of tiny links split by bars, as on the reference site. */
 export function SiteFooter({
   locale,
   dict,
@@ -14,41 +15,42 @@ export function SiteFooter({
   dict: Dictionary;
   cafe: Cafe;
 }) {
+  const external = { target: "_blank", rel: "noopener noreferrer" } as const;
+  const links = [
+    { href: cafe.instagram, label: dict.common.instagram, ...external },
+    { href: `tel:${cafe.phone}`, label: dict.common.call },
+    { href: cafe.mapUrl, label: dict.common.openMap, ...external },
+    { href: localePath(locale, "about"), label: dict.nav.about, internal: true },
+    { href: localePath(locale, "contact"), label: dict.nav.contact, internal: true },
+  ];
   const year = localizeDigits(String(new Date().getFullYear()), locale);
+
   return (
-    <footer className="no-print border-t border-mint bg-white py-12 text-center text-red">
-      <p className="font-display text-3xl uppercase">{cafe.name[locale]}</p>
-      <p className="mt-3">{cafe.address[locale]}</p>
-      <p className="mt-1">
-        {dict.common.everyDay}
-        {dict.common.comma}
-        {formatHours(cafe.hours, locale)}
-        {" · "}
-        <a href={`tel:${cafe.phone}`} dir="ltr" className="hover:underline">
-          {localizeDigits(cafe.phoneDisplay, locale)}
-        </a>
-      </p>
-      <ul className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2 font-display text-lg">
-        {(["menu", "gallery", "about", "contact"] as const).map((key) => (
-          <li key={key}>
-            <Link href={localePath(locale, key)} className="hover:underline">
-              {dict.nav[key]}
-            </Link>
-          </li>
+    <footer className="no-print px-14 pt-10 pb-12 text-center text-[11px] tracking-[0.08em] uppercase">
+      <ul className="flex flex-wrap items-center justify-center gap-y-2">
+        {links.map(({ internal, label, ...link }, index) => (
+          <Fragment key={link.href}>
+            {index > 0 ? (
+              <li aria-hidden className="px-3 sm:px-5">
+                |
+              </li>
+            ) : null}
+            <li>
+              {internal ? (
+                <Link href={link.href} className="underline-offset-4 hover:underline">
+                  {label}
+                </Link>
+              ) : (
+                <a {...link} className="underline-offset-4 hover:underline">
+                  {label}
+                </a>
+              )}
+            </li>
+          </Fragment>
         ))}
-        <li>
-          <a
-            href={cafe.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            {dict.common.instagram}
-          </a>
-        </li>
       </ul>
-      <p className="mt-8 text-sm text-ink">
-        © {year} {cafe.name[locale]}. {dict.footer.rights}
+      <p className="mt-6 text-dim normal-case">
+        © {year} {cafe.name[locale]}
       </p>
     </footer>
   );

@@ -16,7 +16,7 @@ export function LocaleSwitch({ locale, label }: { locale: Locale; label: string 
       href={href}
       hrefLang={target}
       lang={target}
-      className="border border-red bg-white px-3 py-1 font-display text-lg text-red offset-mint transition-colors hover:bg-red hover:text-white"
+      className="inline-flex min-h-6 items-center text-xs tracking-[0.08em] uppercase underline-offset-4 hover:underline"
     >
       {label}
     </Link>

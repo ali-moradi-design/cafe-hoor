@@ -1,36 +1,40 @@
+import Link from "next/link";
+
 import { getDictionary, localePath, type Locale } from "@/shared/i18n";
 import { getPhoto } from "@/shared/photos";
-import { ButtonLink, Container, SectionHeading, WordReveal } from "@/shared/ui";
-import { PhotoCarousel } from "@/widgets/photo-carousel";
+import { Container, Letters, RepelField } from "@/shared/ui";
+import { PhotoStack } from "@/widgets/photo-stack";
 
 const photos = ["brick-hall", "mirror-room", "chandelier-room", "sideboard", "arched-hall"];
 
+/** A few lines about the house in a narrow column, then the house in photos. */
 export function AboutView({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
-  const [first, ...rest] = dict.about.paragraphs;
   return (
-    <>
-      <section className="py-20 sm:py-28">
-        <Container className="max-w-4xl">
-          <SectionHeading as="h1" title={dict.about.title} center />
-          <WordReveal text={first} />
-        </Container>
-      </section>
-      <section className="pb-24 sm:pb-32">
-        <Container className="grid items-center gap-14 md:grid-cols-2">
-          <div data-reveal>
-            <PhotoCarousel photos={photos.map(getPhoto)} locale={locale} labels={dict.common} />
-          </div>
-          <div>
-            {rest.map((paragraph) => (
-              <WordReveal key={paragraph} text={paragraph} />
-            ))}
-            <ButtonLink href={localePath(locale, "menu")} className="mt-10">
-              {dict.common.viewMenu}
-            </ButtonLink>
-          </div>
-        </Container>
-      </section>
-    </>
+    <Container className="max-w-5xl px-11 pt-24 pb-32 sm:px-20">
+      <h1 className="mb-16 text-center text-[13px] tracking-[0.3em] uppercase rtl:font-display rtl:text-3xl rtl:leading-[2] rtl:tracking-normal">
+        <Letters text={dict.about.title} />
+      </h1>
+      <RepelField className="mx-auto max-w-[22rem] text-[14px] leading-[1.75]">
+        <p data-repel>{dict.home.storyText}</p>
+        {dict.about.paragraphs.map((paragraph) => (
+          <p key={paragraph} data-repel className="mt-6">
+            {paragraph}
+          </p>
+        ))}
+        <p data-repel className="mt-8 w-fit uppercase">
+          <Link href={localePath(locale, "menu")} className="underline underline-offset-4">
+            <Letters text={dict.common.viewMenu} />
+          </Link>
+        </p>
+      </RepelField>
+      <div className="mt-32">
+        <PhotoStack
+          photos={photos.map(getPhoto)}
+          locale={locale}
+          labels={{ ...dict.common, photos: dict.about.title }}
+        />
+      </div>
+    </Container>
   );
 }
