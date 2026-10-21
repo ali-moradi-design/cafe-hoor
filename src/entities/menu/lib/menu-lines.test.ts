@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { MenuItem } from "../model/schema";
-import { lineIndents, menuLines, menuSymbol } from "./menu-lines";
+import { menuLines, menuSymbol } from "./menu-lines";
 
 const item: MenuItem = {
   id: "fried-eggs",
@@ -33,25 +33,6 @@ describe("menuLines", () => {
 
   it("gives just the name when there is no description", () => {
     expect(menuLines({ ...item, description: { en: "", fa: "" } }, "fa")).toEqual(["نیمرو"]);
-  });
-});
-
-describe("lineIndents", () => {
-  it("keeps every other line at the edge and stays inside the item", () => {
-    const lines = ["◊", "Fried eggs", "Two eggs", "tandoor bread", "Lahijan black tea"];
-    const indents = lineIndents(lines, "fried-eggs", 17);
-    expect(indents).toHaveLength(lines.length);
-    expect(indents[0]).toBe(0);
-    expect(indents[2]).toBe(0);
-    lines.forEach((line, index) => {
-      const width = Math.min(100, (line.length / 17) * 100);
-      expect(indents[index] + width).toBeLessThanOrEqual(100.5);
-    });
-  });
-
-  it("is the same for the same seed", () => {
-    const lines = ["a", "bb", "ccc", "dddd"];
-    expect(lineIndents(lines, "x", 10)).toEqual(lineIndents(lines, "x", 10));
   });
 });
 

@@ -1,36 +1,36 @@
 import { CafeJsonLd, getCafe } from "@/entities/cafe";
-import { getMenu, getPricing, type MenuItem } from "@/entities/menu";
 import { getDictionary, type Locale } from "@/shared/i18n";
 import { getPhoto } from "@/shared/photos";
 import { ScrollDots } from "@/shared/ui";
 import { InfoPanel } from "@/widgets/info-panel";
-import { MenuSpread } from "@/widgets/menu-spread";
+import { HouseSpread } from "@/widgets/house-spread";
 import { NameMark, NameStar } from "@/widgets/name-star";
 import { PhotoStack } from "@/widgets/photo-stack";
 
 const journalPhotos = [
   "breakfast-by-pool",
   "hummus",
-  "brick-arches",
+  "kashk-bademjan",
   "yaghout",
   "chelo-joojeh",
-  "garden-tables",
+  "caesar-salad",
   "pepperoni",
   "sekanjabin",
 ];
 
-/** One dish per section of the menu: its favourite if it has one, else the first. */
-function homeDishes(): MenuItem[] {
-  const { categories, items } = getMenu();
-  return categories.flatMap((category) => {
-    const inCategory = items.filter((item) => item.category === category.id);
-    const pick = inCategory.find((item) => item.signature) ?? inCategory[0];
-    return pick ? [pick] : [];
-  });
-}
+const housePhotos = [
+  "brick-arches",
+  "wall-lamp",
+  "corner-table",
+  "arched-window",
+  "mirror-room",
+  "old-bicycle",
+  "chandelier-room",
+  "garden-tables",
+];
 
 /**
- * Home, after destroyer.la: an empty landing with the name, the menu spread, the
+ * Home, after destroyer.la: an empty landing with the name, the house spread, the
  * info block, the journal stack and the star the name lands in.
  */
 export function HomeView({ locale }: { locale: Locale }) {
@@ -47,14 +47,16 @@ export function HomeView({ locale }: { locale: Locale }) {
         <ScrollDots className="absolute bottom-6 left-1/2 -translate-x-1/2" />
       </section>
 
-      <section id="menu" className="pt-24">
-        <MenuSpread
-          items={homeDishes()}
+      <section id="house" className="pt-24">
+        <HouseSpread
           locale={locale}
-          pricing={getPricing()}
           dict={dict}
           cafe={cafe}
-          photos={{ top: getPhoto("english-breakfast"), bottom: getPhoto("kabab-platter") }}
+          photos={{
+            top: getPhoto("fountain"),
+            bottom: getPhoto("dining-room"),
+            moments: housePhotos.map(getPhoto),
+          }}
         />
       </section>
 

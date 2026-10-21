@@ -57,7 +57,9 @@ from the reference are used.
 - Persian: same layout mirrored; labels that are words run with
   `writing-mode: vertical-rl` so Persian letters stay joined. The dial uses the
   Persian calendar, the clock Tehran time.
-- Pages: home as above; `/menu` is the full menu in the ingredient style with
+- Pages: home as above, but its menu block shows the house (photos with
+  captions) instead of dishes; `/menu` is the full menu in even columns with
+  dish photos beside their dishes and
   search; `/gallery` is the photo stack plus a grid that opens the lightbox.
 - Fonts: IBM Plex Mono (English); Vazirmatn for Persian text and Noto Nastaliq
   Urdu for Persian titles, dish names and the side navigation.
