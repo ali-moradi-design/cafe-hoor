@@ -1,5 +1,7 @@
 # Redesign after thisisamber.co.uk (pink → pastel green)
 
+> Replaced on 2026-10-21 by the design after destroyer.la; see [destroyer.md](destroyer.md).
+
 Applied on 2026-10-21; tokens live in `src/app/globals.css`.
 
 Reference, section by section:

@@ -69,11 +69,24 @@ test("route prefetches find their files", async ({ page }) => {
 test("no horizontal scrolling on any page", async ({ page }) => {
   for (const path of ["/fa/", "/fa/menu/", "/fa/gallery/", "/fa/about/", "/fa/contact/", "/en/"]) {
     await page.goto(path);
+    // Against the device width too: on phones a wide child widens the layout viewport.
+    const width = page.viewportSize()!.width;
     const overflow = await page.evaluate(
-      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      (device) => Math.max(document.documentElement.scrollWidth, window.innerWidth) - device,
+      width,
     );
     expect(overflow, path).toBeLessThanOrEqual(0);
   }
+});
+
+test("the name lands in the star at the end of the home page", async ({ page }, info) => {
+  test.skip(info.project.name !== "desktop", "the scroll choreography is for wide screens");
+  await page.goto("/en/");
+  await expect(page.locator("html")).toHaveAttribute("data-motion", "");
+  const star = page.locator("[data-star]");
+  await expect(star).not.toHaveAttribute("data-burst");
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect(star).toHaveAttribute("data-burst", "");
 });
 
 for (const path of ["/fa/", "/en/", "/fa/menu/", "/en/menu/", "/fa/contact/", "/fa/gallery/"]) {

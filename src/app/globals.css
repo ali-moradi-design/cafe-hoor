@@ -1,41 +1,47 @@
 @import "tailwindcss";
 
 /*
- * Look: white pages, red line work and type, mint and pastel-green panels
- * (the reference site's pink is replaced by pastel greens).
+ * Look (after destroyer.la): white monospace type on a dark, grainy ground,
+ * small sizes, wide empty space. Pastel green is kept only as the focus and
+ * selection accent.
  */
 @theme {
-  --color-red: #d8241f;
-  --color-red-deep: #c9211d;
+  --color-night: #232323;
+  --color-dim: #a6a6a6;
   --color-mint: #9edcc5;
-  --color-mint-soft: #d8f3ea;
-  --color-sage-soft: #e9f6ef;
-  /* Faded words before they "light up"; only for text 24px and larger (3:1). */
-  --color-pastel: #5e9f80;
-  --color-pine: #2a432e;
-  --color-ink: #333333;
-  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display-face), var(--font-body), sans-serif;
+  --font-sans: var(--font-body), ui-monospace, monospace;
+  /* Titles and names: Nastaliq in Persian, the text face in English. */
+  --font-display: var(--font-display-face), var(--font-body), serif;
 }
 
 @layer base {
   html {
-    scroll-behavior: smooth;
-    --font-body: var(--font-roboto);
-    --font-display-face: var(--font-oswald);
+    --font-body: var(--font-plex-mono);
+    --font-display-face: var(--font-plex-mono);
+    background-color: var(--color-night);
   }
 
   html:lang(fa) {
     --font-body: var(--font-vazirmatn);
-    --font-display-face: var(--font-lalezar);
+    --font-display-face: var(--font-nastaliq);
   }
 
   body {
-    @apply bg-white font-sans font-light text-ink antialiased;
+    @apply font-sans text-[15px] leading-[1.7] text-white antialiased;
+    background-color: var(--color-night);
+    /* Film grain: fine fractal noise, tiled. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-mint);
+    color: var(--color-night);
   }
 
   :focus-visible {
-    outline-color: var(--color-red);
+    outline: 1px solid var(--color-mint);
+    outline-offset: 4px;
   }
 }
 
@@ -47,74 +53,53 @@
   }
 }
 
-/* Condensed display type: headings, buttons, tab labels. */
-@utility font-display {
-  font-family: var(--font-display);
-  font-weight: 500;
-}
-
-/* Big headings with a soft pastel echo behind the letters. */
-@utility title-echo {
-  text-shadow: 3px 3px 0 var(--color-mint-soft);
-}
-
-/* Flat offset shadow under photos, cards and buttons. */
-@utility offset-mint {
-  box-shadow: 6px 6px 0 0 var(--color-mint);
-}
-
-@utility offset-mint-lg {
-  box-shadow: 12px 12px 0 0 var(--color-mint);
-}
-
-@utility offset-red {
-  box-shadow: 8px 8px 0 0 var(--color-red);
-}
-
-/* Fade-up on scroll; only when JavaScript runs (see the inline script in the layout). */
-html[data-js] [data-reveal] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.9s ease,
-    transform 0.9s ease;
-}
-
-html[data-js] [data-reveal][data-shown] {
-  opacity: 1;
-  transform: none;
-}
-
-/* First-visit splash: the logo on white, then the page. */
-@keyframes splash-out {
-  0%,
-  70% {
+/* Slow letter pulse, switched on and off at random by `MotionDriver`. */
+@keyframes shimmer {
+  from {
     opacity: 1;
-    visibility: visible;
   }
+  to {
+    opacity: 0.4;
+  }
+}
+
+[data-shimmer] {
+  animation: shimmer 1.2s ease-in-out infinite alternate;
+}
+
+html[data-scrolling] [data-shimmer] {
+  animation-play-state: paused;
+}
+
+/* Landing "scroll down" dots: each lights up, holds, fades, in turn. */
+@keyframes dot-pulse {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  50% {
+    opacity: 1;
+  }
+  80%,
   100% {
     opacity: 0;
-    visibility: hidden;
   }
 }
 
-.splash {
-  animation: splash-out 1.4s ease forwards;
+.scroll-dots > span {
+  opacity: 0;
+  animation: dot-pulse 3s linear infinite;
+}
+
+html[data-scrolled] .scroll-dots {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  html[data-js] [data-reveal] {
+  [data-shimmer],
+  .scroll-dots > span {
+    animation: none;
     opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .splash {
-    display: none;
   }
 }
 
@@ -122,4 +107,46 @@ html[data-js] [data-reveal][data-shown] {
   .no-print {
     display: none !important;
   }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* The star game (see `NameStar`): missiles and hit flashes, drawn on the page. */
+.star-missile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 2px;
+  height: 10px;
+  margin-left: -1px;
+  background: #fff;
+  pointer-events: none;
+}
+
+@keyframes star-blast {
+  from {
+    opacity: 1;
+    scale: 0.4;
+  }
+  to {
+    opacity: 0;
+    scale: 1.6;
+  }
+}
+
+.star-blast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 24px;
+  height: 24px;
+  border: 1px dashed #fff;
+  border-radius: 9999px;
+  pointer-events: none;
+  animation: star-blast 0.6s steps(10) forwards;
 }

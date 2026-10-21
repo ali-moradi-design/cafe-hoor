@@ -1,4 +1,3 @@
-export { buttonClass, ButtonLink } from "./button-link";
 export { Container } from "./container";
 export {
   ClockIcon,
@@ -11,7 +10,8 @@ export {
   PinIcon,
   SearchIcon,
 } from "./icons";
+export { Letters } from "./letters";
+export { MotionDriver } from "./motion-driver";
+export { Parallax, ScrollDots } from "./parallax";
 export { Photo } from "./photo";
-export { RevealObserver } from "./reveal-observer";
-export { SectionHeading } from "./section-heading";
-export { WordReveal } from "./word-reveal";
+export { RepelField } from "./repel-field";

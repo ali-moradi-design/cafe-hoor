@@ -1,87 +1,82 @@
 import { CafeJsonLd, getCafe } from "@/entities/cafe";
-import { getPricing, getSignatureItems, MenuItemCard } from "@/entities/menu";
-import { getDictionary, localePath, type Locale } from "@/shared/i18n";
+import { getDictionary, type Locale } from "@/shared/i18n";
 import { getPhoto } from "@/shared/photos";
-import { ButtonLink, Container, SectionHeading, WordReveal } from "@/shared/ui";
-import { BookingCard } from "@/widgets/booking-card";
-import { HeroSlider } from "@/widgets/hero-slider";
-import { PhotoCarousel } from "@/widgets/photo-carousel";
-import { VisitInfo } from "@/widgets/visit-info";
+import { ScrollDots } from "@/shared/ui";
+import { InfoPanel } from "@/widgets/info-panel";
+import { HouseSpread } from "@/widgets/house-spread";
+import { NameMark, NameStar } from "@/widgets/name-star";
+import { PhotoStack } from "@/widgets/photo-stack";
 
-const heroPhotos = [
-  "fountain",
-  "english-breakfast",
-  "courtyard-pool",
-  "kabab-platter",
-  "brick-hall",
+const journalPhotos = [
+  "breakfast-by-pool",
+  "hummus",
+  "kashk-bademjan",
+  "yaghout",
+  "chelo-joojeh",
+  "caesar-salad",
   "pepperoni",
+  "sekanjabin",
 ];
-const housePhotos = ["brick-arches", "wall-lamp", "corner-table", "arched-window", "dining-room"];
 
+const housePhotos = [
+  "brick-arches",
+  "wall-lamp",
+  "corner-table",
+  "arched-window",
+  "mirror-room",
+  "old-bicycle",
+  "chandelier-room",
+  "garden-tables",
+];
+
+/**
+ * Home, after destroyer.la: an empty landing with the name, the house spread, the
+ * info block, the journal stack and the star the name lands in.
+ */
 export function HomeView({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const cafe = getCafe();
-  const signature = getSignatureItems();
-  const pricing = getPricing();
 
   return (
     <>
       <CafeJsonLd cafe={cafe} locale={locale} />
-      <h1 className="sr-only">{cafe.name[locale]}</h1>
 
-      <HeroSlider photos={heroPhotos.map(getPhoto)} locale={locale} labels={dict.common} />
-
-      <section className="py-24 sm:py-32">
-        <Container className="max-w-4xl">
-          <SectionHeading title={dict.home.storyTitle} center />
-          <WordReveal text={dict.home.storyText} />
-        </Container>
+      <section className="relative h-svh">
+        <h1 className="sr-only">{cafe.name[locale]}</h1>
+        <NameMark />
+        <ScrollDots className="absolute bottom-6 left-1/2 -translate-x-1/2" />
       </section>
 
-      <section className="pb-24 sm:pb-32">
-        <Container className="grid items-center gap-14 md:grid-cols-2">
-          <div data-reveal>
-            <PhotoCarousel
-              photos={housePhotos.map(getPhoto)}
-              locale={locale}
-              labels={dict.common}
-            />
-          </div>
-          <WordReveal text={dict.home.welcome} />
-        </Container>
+      <section id="house" className="pt-24">
+        <HouseSpread
+          locale={locale}
+          dict={dict}
+          cafe={cafe}
+          photos={{
+            top: getPhoto("fountain"),
+            bottom: getPhoto("dining-room"),
+            moments: housePhotos.map(getPhoto),
+          }}
+        />
       </section>
 
-      <section className="bg-mint-soft py-20 sm:py-28">
-        <Container className="max-w-5xl">
-          <SectionHeading title={dict.home.menuTitle} lead={dict.home.menuLead} center />
-          <div className="grid gap-x-12 gap-y-6 md:grid-cols-2" data-reveal>
-            {signature.map((item) => (
-              <MenuItemCard
-                key={item.id}
-                item={item}
-                locale={locale}
-                pricing={pricing}
-                labels={dict.menu}
-              />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <ButtonLink href={localePath(locale, "menu")}>{dict.home.fullMenu}</ButtonLink>
-          </div>
-        </Container>
+      <section id="info" className="scroll-mt-0 pt-48 md:min-h-[900px]">
+        <InfoPanel locale={locale} dict={dict} cafe={cafe} photo={getPhoto("courtyard-pool")} />
       </section>
 
-      <section className="py-24 sm:py-32">
-        <Container>
-          <BookingCard locale={locale} dict={dict} cafe={cafe} photo={getPhoto("chelo-joojeh")} />
-        </Container>
+      <section id="journal" aria-labelledby="journal-title" className="pt-48">
+        <h2 id="journal-title" className="sr-only">
+          {dict.home.journalTitle}
+        </h2>
+        <PhotoStack
+          photos={journalPhotos.map(getPhoto)}
+          locale={locale}
+          labels={{ ...dict.common, photos: dict.home.journalTitle }}
+        />
       </section>
 
-      <section className="pb-24">
-        <Container>
-          <SectionHeading title={dict.home.visitTitle} />
-          <VisitInfo locale={locale} dict={dict} cafe={cafe} />
-        </Container>
+      <section className="pt-32">
+        <NameStar locale={locale} labels={dict.common} />
       </section>
     </>
   );

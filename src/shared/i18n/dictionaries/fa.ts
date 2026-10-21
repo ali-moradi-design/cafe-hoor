@@ -1,7 +1,14 @@
 import type { Dictionary } from "./en";
 
 export const fa: Dictionary = {
-  nav: { home: "خانه", menu: "منو", gallery: "گالری", about: "درباره ما", contact: "تماس" },
+  nav: {
+    home: "خانه",
+    menu: "منو",
+    gallery: "گالری",
+    about: "درباره ما",
+    contact: "تماس",
+    info: "اطلاعات",
+  },
   common: {
     otherLanguage: "English",
     skipToContent: "رفتن به محتوا",
@@ -19,6 +26,9 @@ export const fa: Dictionary = {
     prev: "قبلی",
     next: "بعدی",
     slide: "عکس {n}",
+    pressSpace: "کلید فاصله را بزنید",
+    score: "امتیاز",
+    photos: "عکس‌ها",
   },
   home: {
     title: "کافه‌ای در دل باغ، در قلب تهران",
@@ -38,6 +48,10 @@ export const fa: Dictionary = {
     bookText:
       "برای رزرو میز صبحانه، ناهار یا شام با ما تماس بگیرید. برای تولد و گروه‌های بزرگ‌تر از قبل خبر بدهید تا حیاط را برایتان آماده کنیم.",
     readMore: "بیشتر درباره ما",
+    services: "صبحانه | ناهار | شام",
+    legend: { breakfast: "صبحانه", food: "غذا", cafe: "کافه و بار", favourite: "محبوب" },
+    subjectToChange: "*قیمت‌ها ممکن است تغییر کند",
+    journalTitle: "دفترچه",
   },
   menu: {
     title: "منو",
