@@ -295,5 +295,236 @@
     "gallery": false,
     "width": 1440,
     "height": 1800
+  },
+  {
+    "id": "fried-eggs",
+    "source": "2026-08-13_Db-HXDNG3YY_04.jpg",
+    "alt": {
+      "en": "Fried eggs with tandoor bread and tea",
+      "fa": "نیمرو با نان تنوری و چای"
+    },
+    "gallery": false,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "tomato-omelette",
+    "source": "2026-08-13_Db-HXDNG3YY_03.jpg",
+    "alt": {
+      "en": "Tomato omelette with bread and tea",
+      "fa": "املت گوجه با نان و چای"
+    },
+    "gallery": false,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "parma-panini",
+    "source": "2026-07-25_DbN9-MKnABP_02.jpg",
+    "alt": {
+      "en": "Turkey parma panini with fries",
+      "fa": "پنینی پارما بوقلمون با سیب‌زمینی"
+    },
+    "gallery": false,
+    "width": 1024,
+    "height": 1280
+  },
+  {
+    "id": "eggplant-panini",
+    "source": "2026-07-25_DbN9-MKnABP_01.jpg",
+    "alt": {
+      "en": "Chicken and eggplant dip panini by the pool",
+      "fa": "پنینی مرغ و دیپ بادمجان کنار حوض"
+    },
+    "gallery": false,
+    "width": 1024,
+    "height": 1280
+  },
+  {
+    "id": "chicken-alfredo",
+    "source": "2025-04-12_DIWr1FJIhq8_02.jpg",
+    "alt": {
+      "en": "Chicken alfredo pasta",
+      "fa": "پاستا چیکن آلفردو"
+    },
+    "gallery": false,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "joojeh-skewers",
+    "source": "2025-05-24_DKC1DfrIaO9_02.jpg",
+    "alt": {
+      "en": "Chicken skewers with saffron rice",
+      "fa": "جوجه‌کباب با برنج زعفرانی"
+    },
+    "gallery": false,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "loghmeh-kabab",
+    "source": "2025-05-24_DKC1DfrIaO9_01.jpg",
+    "alt": {
+      "en": "Loghmeh kabab with grilled tomatoes",
+      "fa": "کباب لقمه با گوجهٔ کبابی"
+    },
+    "gallery": false,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "latte",
+    "source": "2025-04-07_DIJjHN4opmO_01_cover.jpg",
+    "alt": {
+      "en": "Latte with latte art",
+      "fa": "لاته با طرح روی شیر"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "cappuccino",
+    "source": "2025-08-04_DM8WYWKo2e7_01_cover.jpg",
+    "alt": {
+      "en": "Cappuccino in a black cup",
+      "fa": "کاپوچینو در فنجان مشکی"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "iced-caramel-latte",
+    "source": "2025-07-01_DLkzqLoISd-_01_cover.jpg",
+    "alt": {
+      "en": "Iced caramel latte",
+      "fa": "آیس کارامل لاته"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "iced-americano",
+    "source": "2025-05-10_DJezCRJoQKG_01_cover.jpg",
+    "alt": {
+      "en": "Iced americano",
+      "fa": "آیس آمریکانو"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "mojito",
+    "source": "2025-03-10_DHBioSiIoo-_01_cover.jpg",
+    "alt": {
+      "en": "Virgin mojito with mint and lemon",
+      "fa": "موهیتو با نعناع و لیمو"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "carrot-ice-cream",
+    "source": "2025-09-08_DOWc-c2CDg1_01.jpg",
+    "alt": {
+      "en": "Carrot juice with ice cream",
+      "fa": "هویج‌بستنی"
+    },
+    "gallery": false,
+    "width": 1152,
+    "height": 1440
+  },
+  {
+    "id": "nostalgia-shake",
+    "source": "2025-09-04_DOLOT_XiNIz_01.jpg",
+    "alt": {
+      "en": "Nostalgia shake with pistachios",
+      "fa": "شیک نوستالژی با پسته"
+    },
+    "gallery": false,
+    "width": 1152,
+    "height": 1440
+  },
+  {
+    "id": "beer",
+    "source": "2025-07-28_DMqTKQAI5g2_01_cover.jpg",
+    "alt": {
+      "en": "Non-alcoholic beer with nuts",
+      "fa": "آبجوی بدون الکل با آجیل"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "garlic-steak-pizza",
+    "source": "2026-08-17_DcJLy7TCNen_03.jpg",
+    "alt": {
+      "en": "Garlic and steak pizza",
+      "fa": "پیتزا سیر و استیک"
+    },
+    "gallery": false,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "bbq-chicken-pizza",
+    "source": "2026-08-17_DcJLy7TCNen_04.jpg",
+    "alt": {
+      "en": "BBQ chicken pizza",
+      "fa": "پیتزا چیکن باربیکیو"
+    },
+    "gallery": false,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "beef-bacon-pizza",
+    "source": "2026-08-17_DcJLy7TCNen_01.jpg",
+    "alt": {
+      "en": "Beef bacon pizza with iced tea",
+      "fa": "پیتزا بیکن گوشت با چای سرد"
+    },
+    "gallery": false,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "turkey-pizza-slice",
+    "source": "2025-06-01_DKXWVSwIp4R_01_cover.jpg",
+    "alt": {
+      "en": "A slice of smoked turkey pizza",
+      "fa": "برشی از پیتزا ژامبون بوقلمون دودی"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "classic-burger",
+    "source": "2025-05-28_DKM0jmxNXXG_01_cover.jpg",
+    "alt": {
+      "en": "Classic burger with fries",
+      "fa": "برگر کلاسیک با سیب‌زمینی"
+    },
+    "gallery": false,
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "aftab",
+    "source": "2025-06-02_DKZUIfzxh7b_01.jpg",
+    "alt": {
+      "en": "Aftab smoothie by the pool",
+      "fa": "اسموتی آفتاب کنار حوض"
+    },
+    "gallery": false,
+    "width": 1152,
+    "height": 1440
   }
 ]

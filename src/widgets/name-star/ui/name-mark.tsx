@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-import { clamp, hasFullMotion, onSmoothScroll } from "@/shared/lib";
+import type { Locale } from "@/shared/i18n";
+import { clamp, cn, hasFullMotion, onSmoothScroll } from "@/shared/lib";
 
-import { CORE, LETTER, letterFractions, NAME } from "../model/geometry";
+import { CORE, letterFractions, NAMES } from "../model/geometry";
 
 /**
  * The name as a vertical column in the middle of the screen. With full motion it
@@ -12,8 +13,10 @@ import { CORE, LETTER, letterFractions, NAME } from "../model/geometry";
  * the end of the page arrives, the column lands in the star as its upright ray and
  * the star lights up (`data-burst`). Otherwise it simply sits in the landing.
  */
-export function NameMark() {
+export function NameMark({ locale }: { locale: Locale }) {
   const ref = useRef<HTMLDivElement>(null);
+  const name = NAMES[locale];
+  const LETTER = name.size;
 
   useEffect(() => {
     const mark = ref.current;
@@ -62,17 +65,25 @@ export function NameMark() {
       stop();
       observer.disconnect();
     };
-  }, []);
+  }, [LETTER]);
 
   return (
     <div
       ref={ref}
       aria-hidden
-      lang="en"
-      className="pointer-events-none absolute top-1/2 left-1/2 z-30 w-[14px] -translate-x-1/2 -translate-y-1/2 text-center text-[14px] leading-[14px] [html[data-motion]_&]:fixed [html[data-motion]_&]:top-0 [html[data-motion]_&]:translate-y-0"
+      lang={locale}
+      className={cn(
+        "pointer-events-none absolute top-1/2 left-1/2 z-30 w-[28px] -translate-x-1/2 -translate-y-1/2 text-center [html[data-motion]_&]:fixed [html[data-motion]_&]:top-0 [html[data-motion]_&]:translate-y-0",
+        name.className,
+      )}
     >
-      {NAME.map((letter, index) => (
-        <span key={index} data-letter="" className="block h-[14px] will-change-transform">
+      {name.letters.map((letter, index) => (
+        <span
+          key={index}
+          data-letter=""
+          className="block will-change-transform"
+          style={{ height: LETTER }}
+        >
           {letter}
         </span>
       ))}

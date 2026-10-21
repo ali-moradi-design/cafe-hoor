@@ -60,7 +60,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
   const cafe = getCafe();
-  const fonts = locale === "fa" ? [vazirmatn, nastaliq] : [plexMono];
+  // Nastaliq on English pages too: the language switch writes «فارسی» in it.
+  const fonts = locale === "fa" ? [vazirmatn, nastaliq] : [plexMono, nastaliq];
 
   return (
     <html

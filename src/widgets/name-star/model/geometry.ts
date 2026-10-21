@@ -1,8 +1,19 @@
-/** The vertical name, as on the cafe's Instagram. */
-export const NAME = Array.from("HOORFAMILY");
+import type { Locale } from "@/shared/i18n";
 
-/** Letter box height in pixels (14px type on a 14px line). */
-export const LETTER = 14;
+/**
+ * The vertical name, as the cafe calls itself on Instagram: `HOORFAMILY` in
+ * English, «خانه هور» in Nastaliq in Persian (one letter per line; ه، و and ر
+ * hardly join forward, so the stacked letters still read). `size` is the height
+ * of one letter's box in pixels.
+ */
+export const NAMES: Record<Locale, { letters: string[]; size: number; className: string }> = {
+  en: { letters: Array.from("HOORFAMILY"), size: 14, className: "text-[14px] leading-[14px]" },
+  fa: {
+    letters: Array.from("خانههور"),
+    size: 26,
+    className: "font-display text-[21px] leading-[26px]",
+  },
+};
 
 /** Empty space between the star's centre and the inner end of each ray. */
 export const CORE = 80;
@@ -15,7 +26,7 @@ export const RAYS = 36;
  * length: the gap after letter `i` is proportional to `n - 1 - i`, so the outer
  * letters spread most and the inner ones stay close.
  */
-export function letterFractions(count = NAME.length): number[] {
+export function letterFractions(count: number): number[] {
   const total = (count * (count - 1)) / 2;
   let sum = 0;
   return Array.from({ length: count }, (_, index) => {

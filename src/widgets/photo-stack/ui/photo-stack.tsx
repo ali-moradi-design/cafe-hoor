@@ -82,6 +82,7 @@ export function PhotoStack({
     <div
       ref={ref}
       role="region"
+      data-no-shimmer=""
       aria-roledescription="carousel"
       aria-label={labels.photos}
       className="relative mx-auto max-w-[580px]"

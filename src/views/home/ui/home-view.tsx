@@ -1,7 +1,7 @@
 import { CafeJsonLd, getCafe } from "@/entities/cafe";
 import { getDictionary, type Locale } from "@/shared/i18n";
 import { getPhoto } from "@/shared/photos";
-import { ScrollDots } from "@/shared/ui";
+import { ScrollDots, ShimmerScope } from "@/shared/ui";
 import { InfoPanel } from "@/widgets/info-panel";
 import { HeroScatter } from "@/widgets/hero-scatter";
 import { HouseSpread } from "@/widgets/house-spread";
@@ -49,13 +49,13 @@ export function HomeView({ locale }: { locale: Locale }) {
   const cafe = getCafe();
 
   return (
-    <>
+    <ShimmerScope>
       <CafeJsonLd cafe={cafe} locale={locale} />
 
       <section className="relative h-svh">
         <h1 className="sr-only">{cafe.name[locale]}</h1>
         <HeroScatter photos={heroPhotos.map(getPhoto)} locale={locale} />
-        <NameMark />
+        <NameMark locale={locale} />
         <ScrollDots className="absolute bottom-6 left-1/2 -translate-x-1/2" />
       </section>
 
@@ -90,6 +90,6 @@ export function HomeView({ locale }: { locale: Locale }) {
       <section className="pt-32">
         <NameStar locale={locale} labels={dict.common} />
       </section>
-    </>
+    </ShimmerScope>
   );
 }

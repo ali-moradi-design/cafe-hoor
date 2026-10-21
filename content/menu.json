@@ -39,7 +39,8 @@
       "en": "Two eggs with tandoor bread and Lahijan black tea",
       "fa": "دو عدد تخم مرغ، نان تنوری، چای سیاه لاهیجان"
     },
-    "price": 353000
+    "price": 353000,
+    "photo": "fried-eggs"
   },
   {
     "id": "tomato-omelette",
@@ -53,7 +54,8 @@
       "en": "Two eggs in tomato sauce with tandoor bread and Lahijan black tea",
       "fa": "دو عدد تخم مرغ، سس گوجه، نان تنوری، چای سیاه لاهیجان"
     },
-    "price": 453000
+    "price": 453000,
+    "photo": "tomato-omelette"
   },
   {
     "id": "english-breakfast",
@@ -227,7 +229,8 @@
       "en": "Chicken kabab on wooden skewers, one serving",
       "fa": "جوجه کباب چوبی تک نفره"
     },
-    "price": 650000
+    "price": 650000,
+    "photo": "joojeh-skewers"
   },
   {
     "id": "chelo-kareh",
@@ -255,7 +258,8 @@
       "en": "Minced meat kabab without rice",
       "fa": "خوراک کباب لقمه"
     },
-    "price": 1053000
+    "price": 1053000,
+    "photo": "loghmeh-kabab"
   },
   {
     "id": "joojeh-plate",
@@ -298,7 +302,8 @@
       "en": "Alfredo sauce, garlic, beef, mozzarella, mushrooms, black olives and olive oil",
       "fa": "سس آلفردو، سیر، گوشت گوساله، پنیر پیتزا، قارچ، زیتون سیاه، روغن زیتون"
     },
-    "price": 1283000
+    "price": 1283000,
+    "photo": "garlic-steak-pizza"
   },
   {
     "id": "smoked-turkey-pizza",
@@ -312,7 +317,8 @@
       "en": "Alfredo sauce, turkey bacon, mozzarella, mushrooms, olive oil and black olives",
       "fa": "سس آلفردو، بیکن بوقلمون، پنیر پیتزا، قارچ، روغن زیتون، زیتون سیاه"
     },
-    "price": 1100000
+    "price": 1100000,
+    "photo": "turkey-pizza-slice"
   },
   {
     "id": "beef-bacon-pizza",
@@ -326,7 +332,8 @@
       "en": "Pizza with beef bacon",
       "fa": ""
     },
-    "price": 1090000
+    "price": 1090000,
+    "photo": "beef-bacon-pizza"
   },
   {
     "id": "bbq-chicken-pizza",
@@ -340,7 +347,8 @@
       "en": "Barbecue sauce, grilled chicken, mozzarella, mushrooms, black olives and olive oil",
       "fa": "سس باربیکیو، مرغ گریل، پنیر پیتزا، قارچ، زیتون سیاه، روغن زیتون"
     },
-    "price": 990000
+    "price": 990000,
+    "photo": "bbq-chicken-pizza"
   },
   {
     "id": "mushroom-burger",
@@ -382,7 +390,8 @@
       "en": "Beef patty, burger bun, lettuce and caramelised onion",
       "fa": "سر دست گوساله، نان برگر، کاهو فرانسوی، پیاز کاراملی"
     },
-    "price": 900000
+    "price": 900000,
+    "photo": "classic-burger"
   },
   {
     "id": "turkey-parma-panini",
@@ -396,7 +405,8 @@
       "en": "Turkey ham, rocket, mushroom cheese, parmesan and tartar sauce",
       "fa": "ژامبون بوقلمون، روکولا، پنیر قارچ و پارمسان، سس تارتار"
     },
-    "price": 753000
+    "price": 753000,
+    "photo": "parma-panini"
   },
   {
     "id": "chicken-eggplant-panini",
@@ -410,7 +420,8 @@
       "en": "Chicken breast, parmesan, mushroom cheese, sun-dried tomato, eggplant sauce and roast potatoes",
       "fa": "سینه مرغ، پنیر پارمسان و قارچ، گوجه خشک، سس بادمجان، سیب زمینی تنوری"
     },
-    "price": 713000
+    "price": 713000,
+    "photo": "eggplant-panini"
   },
   {
     "id": "golden-chicken-burger",
@@ -453,7 +464,8 @@
       "en": "Grilled chicken, penne, alfredo sauce and parmesan",
       "fa": "مرغ گریل، پنه، سس آلفردو، پنیر پارمسان"
     },
-    "price": 762000
+    "price": 762000,
+    "photo": "chicken-alfredo"
   },
   {
     "id": "lava-cake",
@@ -621,7 +633,8 @@
       "en": "Double espresso, milk and caramel syrup",
       "fa": "اسپرسو دبل، شیر، سیروپ کارامل"
     },
-    "price": 383000
+    "price": 383000,
+    "photo": "iced-caramel-latte"
   },
   {
     "id": "latte",
@@ -635,7 +648,8 @@
       "en": "Double espresso and milk",
       "fa": "اسپرسو دبل، شیر"
     },
-    "price": 337000
+    "price": 337000,
+    "photo": "latte"
   },
   {
     "id": "coconut-latte",
@@ -663,7 +677,8 @@
       "en": "Double espresso and milk",
       "fa": "اسپرسو دبل، شیر"
     },
-    "price": 293000
+    "price": 293000,
+    "photo": "cappuccino"
   },
   {
     "id": "cortado",
@@ -705,7 +720,8 @@
       "en": "Double espresso and hot water",
       "fa": "اسپرسو دبل، آبجوش"
     },
-    "price": 253000
+    "price": 253000,
+    "photo": "iced-americano"
   },
   {
     "id": "espresso",
@@ -845,7 +861,8 @@
       "en": "Lime, mint, rum syrup and soda",
       "fa": "لیمو، نعنا، رام، سودا"
     },
-    "price": 295000
+    "price": 295000,
+    "photo": "mojito"
   },
   {
     "id": "lemonade",
@@ -986,7 +1003,8 @@
       "en": "Mango, banana, peach juice and willow syrup",
       "fa": "انبه، موز، آب هلو، شربت بیدمشک"
     },
-    "price": 433000
+    "price": 433000,
+    "photo": "aftab"
   },
   {
     "id": "seasonal-juice",
@@ -1028,7 +1046,8 @@
       "en": "Fresh carrot juice with Persian ice cream",
       "fa": "آب هویج تازه، بستنی سنتی"
     },
-    "price": 273000
+    "price": 273000,
+    "photo": "carrot-ice-cream"
   },
   {
     "id": "wild-berry-float",
@@ -1056,7 +1075,8 @@
       "en": "Vanilla ice cream, banana, cardamom, walnut and masala",
       "fa": "بستنی وانیل، موز، هل، گردو، ماسالا"
     },
-    "price": 453000
+    "price": 453000,
+    "photo": "nostalgia-shake"
   },
   {
     "id": "salty-crunch-shake",
@@ -1154,7 +1174,8 @@
       "en": "",
       "fa": ""
     },
-    "price": 293000
+    "price": 293000,
+    "photo": "beer"
   },
   {
     "id": "sayeh",

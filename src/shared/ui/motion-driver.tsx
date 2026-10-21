@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 /**
@@ -11,8 +10,6 @@ import { useEffect } from "react";
  *   1 ↔ 0.4 opacity pulse on or off.
  */
 export function MotionDriver() {
-  const pathname = usePathname();
-
   useEffect(() => {
     const html = document.documentElement;
     let timer = 0;
@@ -33,15 +30,15 @@ export function MotionDriver() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const letters = Array.from(document.querySelectorAll<HTMLElement>("[data-letter]"));
     const interval = window.setInterval(() => {
       if (document.documentElement.hasAttribute("data-scrolling")) return;
-      for (const letter of letters) {
+      // Looked up each time: `ShimmerScope` adds letters after the page mounts.
+      for (const letter of document.querySelectorAll<HTMLElement>("[data-letter]")) {
         if (Math.random() < 0.25) letter.toggleAttribute("data-shimmer");
       }
     }, 1200);
     return () => window.clearInterval(interval);
-  }, [pathname]);
+  }, []);
 
   return null;
 }
