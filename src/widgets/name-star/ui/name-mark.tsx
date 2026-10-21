@@ -11,7 +11,8 @@ import { CORE, letterTops, NAMES, restLength } from "../model/geometry";
  * The name as a vertical column in the middle of the screen. With full motion it
  * stays fixed while the page scrolls, its letters drifting apart; when the star at
  * the end of the page arrives, the column lands in the star as its upright ray and
- * the star lights up (`data-burst`). Otherwise it simply sits in the landing.
+ * the star lights up (`data-burst`); the Persian name fades out instead, since the
+ * star spells the English one. Without full motion it simply sits in the landing.
  */
 export function NameMark({ locale }: { locale: Locale }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,7 +49,12 @@ export function NameMark({ locale }: { locale: Locale }) {
       const tops = letterTops(name.groups, size, spread, name.wordGap);
       const height = tops[count - 1] + size;
       const centred = viewport / 2 - height / 2;
-      const top = Math.min(centred, starTop - y);
+      // A name that does not land stays centred and fades out as the star comes up.
+      const top = name.lands ? Math.min(centred, starTop - y) : centred;
+      if (!name.lands) {
+        const fade = clamp((starTop - y - centred) / (viewport * 0.35), 0, 1);
+        mark.style.opacity = fade.toFixed(3);
+      }
       // The class's `translate` keeps it centred horizontally; this adds the height.
       mark.style.transform = `translate3d(0, ${top.toFixed(1)}px, 0)`;
       pieces.forEach((piece, index) => {

@@ -3,8 +3,8 @@ import type { Locale } from "@/shared/i18n";
 /**
  * The vertical name, as the cafe calls itself on Instagram, one letter per line.
  * English: `HOORFAMILY`, every letter drifting apart as the page scrolls. Persian:
- * «خانه هور» in Nastaliq; the letters of each word stay together and only the gap
- * between the two words opens. `groups` gives each letter its word; `size` is the
+ * «خانه هور» in Nastaliq, on the landing only; the letters of each word stay
+ * together and only the gap between the two words opens. `groups` gives each letter its word; `size` is the
  * height of one letter's box in pixels.
  */
 export type NameStyle = {
@@ -13,6 +13,8 @@ export type NameStyle = {
   size: number;
   /** Gap between words even before any spread, in pixels. */
   wordGap: number;
+  /** Lands in the star (whose rays are always the English name) or fades before it. */
+  lands: boolean;
   className: string;
 };
 
@@ -22,14 +24,16 @@ export const NAMES: Record<Locale, NameStyle> = {
     groups: Array.from("HOORFAMILY", (_, index) => index),
     size: 14,
     wordGap: 0,
+    lands: true,
     className: "text-[14px] leading-[14px]",
   },
   fa: {
     letters: Array.from("خانههور"),
     groups: [0, 0, 0, 0, 1, 1, 1],
-    size: 26,
+    size: 21,
     wordGap: 20,
-    className: "font-display text-[21px] leading-[26px]",
+    lands: false,
+    className: "font-display text-[21px] leading-[21px]",
   },
 };
 
