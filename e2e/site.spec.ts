@@ -79,15 +79,19 @@ test("no horizontal scrolling on any page", async ({ page }) => {
   }
 });
 
-test("the name lands in the star at the end of the home page", async ({ page }, info) => {
-  test.skip(info.project.name !== "desktop", "the scroll choreography is for wide screens");
-  await page.goto("/en/");
-  await expect(page.locator("html")).toHaveAttribute("data-motion", "");
-  const star = page.locator("[data-star]");
-  await expect(star).not.toHaveAttribute("data-burst");
-  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-  await expect(star).toHaveAttribute("data-burst", "");
-});
+for (const locale of ["en", "fa"]) {
+  test(`the name lands in the star at the end of the home page (${locale})`, async ({
+    page,
+  }, info) => {
+    test.skip(info.project.name !== "desktop", "the scroll choreography is for wide screens");
+    await page.goto(`/${locale}/`);
+    await expect(page.locator("html")).toHaveAttribute("data-motion", "");
+    const star = page.locator("[data-star]");
+    await expect(star).not.toHaveAttribute("data-burst");
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await expect(star).toHaveAttribute("data-burst", "");
+  });
+}
 
 for (const path of ["/fa/", "/en/", "/fa/menu/", "/en/menu/", "/fa/contact/", "/fa/gallery/"]) {
   test(`no serious accessibility problems on ${path}`, async ({ page }) => {

@@ -22,9 +22,7 @@ export function NameStar({
   labels: { pressSpace: string; score: string };
 }) {
   const shipRef = useRef<HTMLDivElement>(null);
-  // The star always spells the English name; only the landing name is localised.
-  const name = NAMES.en;
-  const markLands = NAMES[locale].lands;
+  const name = NAMES[locale];
   const count = name.letters.length;
   const fractions = groupFractions(name.groups);
   const [atBottom, setAtBottom] = useState(false);
@@ -149,7 +147,7 @@ export function NameStar({
               ray === 0
                 ? cn(
                     "absolute top-0 left-1/2 -ml-[15px] h-1/2 w-[30px] origin-bottom",
-                    markLands && "[html[data-motion]_&]:invisible",
+                    "[html[data-motion]_&]:invisible",
                   )
                 : "absolute top-0 left-1/2 -ml-[15px] h-1/2 w-[30px] origin-bottom"
             }
@@ -165,7 +163,12 @@ export function NameStar({
                     name.className,
                   )}
                   style={{
-                    top: `calc(${index * name.size + name.groups[index] * name.wordGap}px + (100% - ${restLength(name)}px) * ${fractions[index]})`,
+                    top:
+                      name.maxSpread === undefined
+                        ? `calc(${index * name.size + name.groups[index] * name.wordGap}px + (100% - ${restLength(name)}px) * ${fractions[index]})`
+                        : index * name.size +
+                          name.groups[index] * name.wordGap +
+                          name.maxSpread * fractions[index],
                     height: name.size,
                     transitionDelay: `${(count - 1 - index) * 50}ms`,
                   }}
