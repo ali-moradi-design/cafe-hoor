@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/shared/i18n";
 import { cn, hasFullMotion, localizeDigits } from "@/shared/lib";
 
-import { CORE, letterFractions, NAMES, RAYS } from "../model/geometry";
+import { CORE, groupFractions, NAMES, RAYS, restLength } from "../model/geometry";
 const numerals = [["I"], ["II", "III"], ["IV", "V", "VI"], ["VII", "VIII", "IX"]];
 
 /**
@@ -23,7 +23,8 @@ export function NameStar({
 }) {
   const shipRef = useRef<HTMLDivElement>(null);
   const name = NAMES[locale];
-  const fractions = letterFractions(name.letters.length);
+  const count = name.letters.length;
+  const fractions = groupFractions(name.groups);
   const [atBottom, setAtBottom] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [score, setScore] = useState(0);
@@ -144,8 +145,8 @@ export function NameStar({
             key={ray}
             className={
               ray === 0
-                ? "absolute top-0 left-1/2 -ml-[14px] h-1/2 w-[28px] origin-bottom [html[data-motion]_&]:invisible"
-                : "absolute top-0 left-1/2 -ml-[14px] h-1/2 w-[28px] origin-bottom"
+                ? "absolute top-0 left-1/2 -ml-[15px] h-1/2 w-[30px] origin-bottom [html[data-motion]_&]:invisible"
+                : "absolute top-0 left-1/2 -ml-[15px] h-1/2 w-[30px] origin-bottom"
             }
             style={{ transform: `rotate(${ray * 10}deg)` }}
           >
@@ -159,12 +160,14 @@ export function NameStar({
                     name.className,
                   )}
                   style={{
-                    top: `calc((100% - ${name.size}px) * ${fractions[index]})`,
+                    top: `calc(${index * name.size + name.groups[index] * name.wordGap}px + (100% - ${restLength(name)}px) * ${fractions[index]})`,
                     height: name.size,
-                    transitionDelay: `${(name.letters.length - 1 - index) * 50}ms`,
+                    transitionDelay: `${(count - 1 - index) * 50}ms`,
                   }}
                 >
-                  <span data-letter="">{letter}</span>
+                  <span data-letter="" className="inline-block">
+                    {letter}
+                  </span>
                 </span>
               ))}
             </div>

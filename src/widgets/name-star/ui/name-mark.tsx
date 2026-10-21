@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import type { Locale } from "@/shared/i18n";
 import { clamp, cn, hasFullMotion, onSmoothScroll } from "@/shared/lib";
 
-import { CORE, letterFractions, NAMES } from "../model/geometry";
+import { CORE, letterTops, NAMES, restLength } from "../model/geometry";
 
 /**
  * The name as a vertical column in the middle of the screen. With full motion it
@@ -16,16 +16,15 @@ import { CORE, letterFractions, NAMES } from "../model/geometry";
 export function NameMark({ locale }: { locale: Locale }) {
   const ref = useRef<HTMLDivElement>(null);
   const name = NAMES[locale];
-  const LETTER = name.size;
+  const size = name.size;
 
   useEffect(() => {
     const mark = ref.current;
     const star = document.querySelector<HTMLElement>("[data-star]");
     if (!mark || !star || !hasFullMotion()) return;
 
-    const letters = Array.from(mark.children) as HTMLElement[];
-    const fractions = letterFractions(letters.length);
-    const last = letters.length - 1;
+    const pieces = Array.from(mark.children) as HTMLElement[];
+    const count = pieces.length;
     let starTop = 0;
     let length = 0;
     let viewport = 0;
@@ -44,15 +43,18 @@ export function NameMark({ locale }: { locale: Locale }) {
     const stop = onSmoothScroll((y) => {
       const landing = Math.max(1, starTop - viewport / 2 + length / 2);
       const progress = clamp(y / landing, 0, 1);
-      const spread = (length - LETTER) * progress;
-      const height = last * LETTER * (1 - progress) + spread + LETTER;
+      // Fully spread, the name fills the star's upright ray.
+      const spread = Math.max(0, length - restLength(name)) * progress;
+      const tops = letterTops(name.groups, size, spread, name.wordGap);
+      const height = tops[count - 1] + size;
       const centred = viewport / 2 - height / 2;
       const top = Math.min(centred, starTop - y);
       // The class's `translate` keeps it centred horizontally; this adds the height.
       mark.style.transform = `translate3d(0, ${top.toFixed(1)}px, 0)`;
-      letters.forEach((letter, index) => {
-        const offset = index * LETTER * (1 - progress) + spread * fractions[index];
-        letter.style.transform = `translate3d(0, ${(offset - index * LETTER).toFixed(1)}px, 0)`;
+      pieces.forEach((piece, index) => {
+        // The resting word gap is already a margin in the flow; move by the rest.
+        const rest = index * size + name.groups[index] * name.wordGap;
+        piece.style.transform = `translate3d(0, ${(tops[index] - rest).toFixed(1)}px, 0)`;
       });
       const landed = progress >= 1 && starTop - y <= centred + 0.5;
       if (landed !== burst) {
@@ -65,7 +67,7 @@ export function NameMark({ locale }: { locale: Locale }) {
       stop();
       observer.disconnect();
     };
-  }, [LETTER]);
+  }, [name, size]);
 
   return (
     <div
@@ -73,18 +75,21 @@ export function NameMark({ locale }: { locale: Locale }) {
       aria-hidden
       lang={locale}
       className={cn(
-        "pointer-events-none absolute top-1/2 left-1/2 z-30 w-[28px] -translate-x-1/2 -translate-y-1/2 text-center [html[data-motion]_&]:fixed [html[data-motion]_&]:top-0 [html[data-motion]_&]:translate-y-0",
+        "pointer-events-none absolute top-1/2 left-1/2 z-30 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center [html[data-motion]_&]:fixed [html[data-motion]_&]:top-0 [html[data-motion]_&]:translate-y-0",
         name.className,
       )}
     >
-      {name.letters.map((letter, index) => (
+      {name.letters.map((piece, index) => (
         <span
           key={index}
           data-letter=""
-          className="block will-change-transform"
-          style={{ height: LETTER }}
+          className="block w-7 text-center will-change-transform"
+          style={{
+            height: size,
+            marginTop: index && name.groups[index] !== name.groups[index - 1] ? name.wordGap : 0,
+          }}
         >
-          {letter}
+          {piece}
         </span>
       ))}
     </div>
