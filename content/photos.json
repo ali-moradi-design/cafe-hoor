@@ -1,0 +1,299 @@
+[
+  {
+    "id": "courtyard-pool",
+    "source": "2025-06-07_DKml1Rho5Rm_02.jpg",
+    "alt": {
+      "en": "The courtyard pool under the reed pergola",
+      "fa": "حوض حیاط زیر سایه‌بان حصیری"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "fountain",
+    "source": "2026-07-27_DbSsldyRzVR_01_cover.jpg",
+    "alt": {
+      "en": "Fountain in the turquoise-tiled pool",
+      "fa": "فواره در حوض کاشی فیروزه‌ای"
+    },
+    "gallery": true,
+    "width": 1126,
+    "height": 2000
+  },
+  {
+    "id": "brick-arches",
+    "source": "2025-05-17_DJxBrClpLYC_01.jpg",
+    "alt": {
+      "en": "Brick arches and lanterns in the courtyard",
+      "fa": "طاق‌های آجری و فانوس‌های حیاط"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "garden-tables",
+    "source": "2025-12-08_DR_7_sniPSD_01_cover.jpg",
+    "alt": {
+      "en": "Tables among the plants in the garden",
+      "fa": "میزها میان گیاهان حیاط"
+    },
+    "gallery": true,
+    "width": 1080,
+    "height": 1920
+  },
+  {
+    "id": "brick-hall",
+    "source": "2025-06-07_DKml1Rho5Rm_04.jpg",
+    "alt": {
+      "en": "Covered terrace with brick walls",
+      "fa": "ایوان سرپوشیده با دیوارهای آجری"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "old-bicycle",
+    "source": "2025-06-04_DKfHeWCudy9_09.jpg",
+    "alt": {
+      "en": "An old bicycle under dried flowers",
+      "fa": "دوچرخهٔ قدیمی زیر گل‌های خشک"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "wall-lamp",
+    "source": "2025-06-04_DKfHeWCudy9_08.jpg",
+    "alt": {
+      "en": "Brass wall lamp with ivy",
+      "fa": "چراغ دیواری برنجی و پیچک"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "corner-table",
+    "source": "2025-06-04_DKfHeWCudy9_06.jpg",
+    "alt": {
+      "en": "A quiet table for two by the brick column",
+      "fa": "میز دونفرهٔ دنج کنار ستون آجری"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "arched-window",
+    "source": "2025-06-04_DKfHeWCudy9_05.jpg",
+    "alt": {
+      "en": "Arched window with lanterns",
+      "fa": "پنجرهٔ طاق‌دار و فانوس‌ها"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "dining-room",
+    "source": "2025-06-04_DKfHeWCudy9_03.jpg",
+    "alt": {
+      "en": "Indoor dining room with bentwood chairs",
+      "fa": "سالن داخلی با صندلی‌های لهستانی"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "chandelier-room",
+    "source": "2025-03-25_DHoc2z7oY7m_02.jpg",
+    "alt": {
+      "en": "Wooden ceiling and chandelier in the hall",
+      "fa": "سقف چوبی و لوستر سالن"
+    },
+    "gallery": true,
+    "width": 1080,
+    "height": 1350
+  },
+  {
+    "id": "sideboard",
+    "source": "2025-01-27_DFVu7fWIPi8_02.jpg",
+    "alt": {
+      "en": "Antique sideboard and mirror",
+      "fa": "بوفهٔ قدیمی و آینه"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "arched-hall",
+    "source": "2025-01-27_DFVu7fWIPi8_01.jpg",
+    "alt": {
+      "en": "Arched doorway into the hall",
+      "fa": "درگاه طاق‌دار سالن"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "english-breakfast",
+    "source": "2026-09-03_Dc0VaHHHMkG_01.jpg",
+    "alt": {
+      "en": "English breakfast on a tiled table",
+      "fa": "بشقاب انگلیسی روی میز کاشی"
+    },
+    "gallery": true,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "kabab-platter",
+    "source": "2025-12-17_DSXwbECiD1d_03.jpg",
+    "alt": {
+      "en": "Kabab and saffron rice platter",
+      "fa": "سینی کباب و برنج زعفرانی"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "yaghout",
+    "source": "2025-12-22_DSj1E-VCEeU_02.jpg",
+    "alt": {
+      "en": "Yaghout, a red mocktail",
+      "fa": "یاقوت، ماکتل قرمز"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "mirror-room",
+    "source": "2025-06-07_DKml1Rho5Rm_03.jpg",
+    "alt": {
+      "en": "Mirror, sideboard and plants in the hall",
+      "fa": "آینه، بوفه و گیاهان سالن"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "breakfast-by-pool",
+    "source": "2026-08-13_Db-HXDNG3YY_01.jpg",
+    "alt": {
+      "en": "Iranian breakfast on the pool tiles",
+      "fa": "صبحانهٔ ایرانی روی کاشی‌های حوض"
+    },
+    "gallery": true,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "sekanjabin",
+    "source": "2025-12-11_DSIIdC7CN0T_02.jpg",
+    "alt": {
+      "en": "Cucumber sekanjabin by the pool",
+      "fa": "خیار سکنجبین کنار حوض"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "iced-drink",
+    "source": "2025-06-02_DKZUIfzxh7b_01.jpg",
+    "alt": {
+      "en": "A cold drink on the turquoise tiles",
+      "fa": "نوشیدنی سرد روی کاشی فیروزه‌ای"
+    },
+    "gallery": true,
+    "width": 1152,
+    "height": 1440
+  },
+  {
+    "id": "special-burger",
+    "source": "2026-08-07_DbvGGXVnORg_01.jpg",
+    "alt": {
+      "en": "Hoor special burger with fries",
+      "fa": "اسپشیال برگر هور با سیب‌زمینی"
+    },
+    "gallery": true,
+    "width": 1600,
+    "height": 2000
+  },
+  {
+    "id": "hummus",
+    "source": "2025-08-09_DNJOFXYIpwo_02.jpg",
+    "alt": {
+      "en": "Hummus with Hoor bread",
+      "fa": "حمص با نان هور"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "pepperoni",
+    "source": "2025-08-21_DNnbFrTIl0F_01.jpg",
+    "alt": {
+      "en": "Pepperoni pizza",
+      "fa": "پیتزا پپرونی"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "caesar-salad",
+    "source": "2025-09-20_DO1GxihiI5H_02.jpg",
+    "alt": {
+      "en": "Caesar salad",
+      "fa": "سالاد سزار"
+    },
+    "gallery": true,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "kashk-bademjan",
+    "source": "2025-08-16_DNbN257Ig2F_01.jpg",
+    "alt": {
+      "en": "Kashk-e bademjan",
+      "fa": "کشک بادمجان"
+    },
+    "gallery": false,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "chelo-joojeh",
+    "source": "2025-05-15_DJrfKPRISwX_01.jpg",
+    "alt": {
+      "en": "Chelo joojeh with grilled tomatoes",
+      "fa": "چلوجوجه با گوجهٔ کبابی"
+    },
+    "gallery": false,
+    "width": 1440,
+    "height": 1800
+  },
+  {
+    "id": "chelo-kabab",
+    "source": "2025-01-22_DFInrsQIRTa_02.jpg",
+    "alt": {
+      "en": "Kabab with saffron rice",
+      "fa": "کباب با برنج زعفرانی"
+    },
+    "gallery": false,
+    "width": 1440,
+    "height": 1800
+  }
+]

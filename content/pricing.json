@@ -1,0 +1,9 @@
+{
+  "currency": "TOMAN",
+  "vatPercent": 10,
+  "usd": {
+    "tomanPerUsd": 266000,
+    "date": "2026-10-21",
+    "source": "Tehran open-market rate reported by IMNA and Tose Brand"
+  }
+}

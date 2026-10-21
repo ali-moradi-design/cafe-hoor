@@ -1,0 +1,26 @@
+{
+  "name": {
+    "en": "Hoor Cafe & Restaurant",
+    "fa": "کافه و رستوران هور"
+  },
+  "shortName": {
+    "en": "Hoor",
+    "fa": "هور"
+  },
+  "address": {
+    "en": "No. 75, start of Mani St., Haft-e Tir Sq., Tehran",
+    "fa": "تهران، میدان هفت‌تیر، ابتدای خیابان مانی، پلاک ۷۵"
+  },
+  "phone": "+982188822288",
+  "phoneDisplay": "88822288",
+  "hours": {
+    "opens": "09:00",
+    "closes": "23:30"
+  },
+  "instagram": "https://www.instagram.com/hoorfamily/",
+  "mapUrl": "https://maps.app.goo.gl/SMJm4PzsJ9xgWh4D7",
+  "geo": {
+    "lat": 35.7158065,
+    "lng": 51.4268982
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "breakfast",
+    "title": {
+      "en": "Breakfast",
+      "fa": "صبحانه"
+    }
+  },
+  {
+    "id": "starters",
+    "title": {
+      "en": "Starters & salads",
+      "fa": "پیش‌غذا و سالاد"
+    }
+  },
+  {
+    "id": "iranian",
+    "title": {
+      "en": "Iranian dishes",
+      "fa": "غذای ایرانی"
+    }
+  },
+  {
+    "id": "pizza",
+    "title": {
+      "en": "Pizza",
+      "fa": "پیتزا"
+    }
+  },
+  {
+    "id": "burgers-sandwiches",
+    "title": {
+      "en": "Burgers & sandwiches",
+      "fa": "برگر و ساندویچ"
+    }
+  },
+  {
+    "id": "pasta",
+    "title": {
+      "en": "Pasta",
+      "fa": "پاستا"
+    }
+  },
+  {
+    "id": "cakes",
+    "title": {
+      "en": "Cakes & desserts",
+      "fa": "کیک و دسر"
+    }
+  },
+  {
+    "id": "coffee",
+    "title": {
+      "en": "Coffee",
+      "fa": "قهوه"
+    }
+  },
+  {
+    "id": "hot-drinks",
+    "title": {
+      "en": "Hot drinks",
+      "fa": "نوشیدنی گرم"
+    }
+  },
+  {
+    "id": "tea",
+    "title": {
+      "en": "Tea & infusions",
+      "fa": "چای و دمنوش"
+    }
+  },
+  {
+    "id": "mocktails",
+    "title": {
+      "en": "Mocktails",
+      "fa": "ماکتل"
+    }
+  },
+  {
+    "id": "sharbat",
+    "title": {
+      "en": "Persian sharbats",
+      "fa": "شربت"
+    }
+  },
+  {
+    "id": "smoothies",
+    "title": {
+      "en": "Smoothies",
+      "fa": "اسموتی"
+    }
+  },
+  {
+    "id": "cold-drinks",
+    "title": {
+      "en": "Cold drinks",
+      "fa": "نوشیدنی سرد"
+    }
+  },
+  {
+    "id": "shakes",
+    "title": {
+      "en": "Shakes",
+      "fa": "شیک"
+    }
+  },
+  {
+    "id": "with-food",
+    "title": {
+      "en": "Drinks with food",
+      "fa": "نوشیدنی کنار غذا"
+    }
+  }
+]

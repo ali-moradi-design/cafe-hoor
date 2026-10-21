@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #4a5a37;
+  --color-forest-deep: #343f26;
+  --color-sage: #8b9a6b;
+  --color-cream: #f7f2e7;
+  --color-sand: #e8dcc4;
+  --color-gold: #c19a5b;
+  --color-gold-deep: #6b4f1f;
+  --color-ink: #1f2a22;
+  --font-sans: var(--font-vazirmatn), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline-color: var(--color-gold);
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Soft tile motif inspired by the cafe's blue-tiled courtyard. */
+@utility tile-pattern {
+  background-image:
+    radial-gradient(circle at 50% 0, rgb(255 255 255 / 0.18) 0 18%, transparent 19%),
+    radial-gradient(circle at 0 50%, rgb(255 255 255 / 0.12) 0 18%, transparent 19%),
+    radial-gradient(circle at 100% 50%, rgb(255 255 255 / 0.12) 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 100%, rgb(255 255 255 / 0.18) 0 18%, transparent 19%);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
