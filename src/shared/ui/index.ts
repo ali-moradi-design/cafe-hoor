@@ -15,3 +15,4 @@ export { MotionDriver } from "./motion-driver";
 export { Parallax, ScrollDots } from "./parallax";
 export { Photo } from "./photo";
 export { RepelField } from "./repel-field";
+export { ShimmerScope } from "./shimmer-scope";

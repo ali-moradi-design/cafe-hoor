@@ -53,6 +53,13 @@ from the reference are used.
 
 ## Our version
 
+- Background: `public/textures/grain.jpg`, made by `scripts/make-grain.mjs` to
+  the reference's measured numbers (mean luminance, grain, unevenness, specks).
+- Landing: seven photos scattered around the name develop in like prints; on
+  scroll each drifts at its own speed, grows or shrinks, tilts and fades; with
+  a fine pointer they lean with it.
+- The side navigation starts with Home on every page.
+
 - Name: `HOORFAMILY` (the Instagram name) as the vertical column.
 - Persian: same layout mirrored; labels that are words run with
   `writing-mode: vertical-rl` so Persian letters stay joined. The dial uses the

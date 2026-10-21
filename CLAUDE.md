@@ -14,7 +14,9 @@ Cafe site for Hoor Family (demo 7 of the portfolio roadmap). The full brief is
 - Build in small PRs: branch → PR → CI → squash merge into `main`.
 - `content-raw/` holds raw Instagram downloads and saved pages; never commit it,
   never delete the original photo files in it.
-- Photos come only from the cafe's Instagram; prices only from its snapp-store
+- Photos come from the cafe's Instagram. A dish with no Instagram photo gets a
+  free Pexels stock photo (`stock.url` in content/photos.json), shown with a
+  "sample photo" label (decided 2026-10-22). Prices only from the snapp-store
   menu. No hookah anywhere on the site. English prices are in US dollars.
 - Before calling work done: `pnpm format:check`, `pnpm lint`, `pnpm typecheck`,
   `pnpm test`, `pnpm build`, `pnpm test:e2e`.

@@ -19,6 +19,7 @@ type Labels = {
   noResults: string;
   priceSoon: string;
   signature: string;
+  sample: string;
   categories: string;
 };
 
@@ -76,7 +77,7 @@ export function MenuBoard({
 
   return (
     <div>
-      <div className="sticky top-0 z-20 bg-night pt-3 pb-3 shadow-[0_0_0_100vmax_var(--color-night)] [clip-path:inset(0_-100vmax)]">
+      <div className="sticky top-0 z-20 -mx-[50vw] grain px-[50vw] pt-3 pb-3">
         <div className="mx-auto max-w-md">
           <MenuSearch value={query} onChange={setQuery} label={labels.search} />
         </div>

@@ -2,12 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { hasFullMotion, localizeDigits } from "@/shared/lib";
 import type { Locale } from "@/shared/i18n";
+import { cn, hasFullMotion, localizeDigits } from "@/shared/lib";
 
-import { CORE, LETTER, letterFractions, NAME, RAYS } from "../model/geometry";
-
-const fractions = letterFractions(NAME.length);
+import { CORE, groupFractions, NAMES, RAYS, restLength } from "../model/geometry";
 const numerals = [["I"], ["II", "III"], ["IV", "V", "VI"], ["VII", "VIII", "IX"]];
 
 /**
@@ -24,6 +22,9 @@ export function NameStar({
   labels: { pressSpace: string; score: string };
 }) {
   const shipRef = useRef<HTMLDivElement>(null);
+  const name = NAMES[locale];
+  const count = name.letters.length;
+  const fractions = groupFractions(name.groups);
   const [atBottom, setAtBottom] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [score, setScore] = useState(0);
@@ -133,7 +134,7 @@ export function NameStar({
   const digits = String(score).padStart(5, " ");
 
   return (
-    <div className="relative pt-16" lang="en" dir="ltr">
+    <div className="relative pt-16" dir="ltr" data-no-shimmer="">
       <div
         data-star=""
         aria-hidden
@@ -144,23 +145,37 @@ export function NameStar({
             key={ray}
             className={
               ray === 0
-                ? "absolute top-0 left-1/2 -ml-[7px] h-1/2 w-[14px] origin-bottom [html[data-motion]_&]:invisible"
-                : "absolute top-0 left-1/2 -ml-[7px] h-1/2 w-[14px] origin-bottom"
+                ? cn(
+                    "absolute top-0 left-1/2 -ml-[15px] h-1/2 w-[30px] origin-bottom",
+                    "[html[data-motion]_&]:invisible",
+                  )
+                : "absolute top-0 left-1/2 -ml-[15px] h-1/2 w-[30px] origin-bottom"
             }
             style={{ transform: `rotate(${ray * 10}deg)` }}
           >
             <div className="relative" style={{ height: `calc(100% - ${CORE}px)` }}>
-              {NAME.map((letter, index) => (
+              {name.letters.map((letter, index) => (
                 <span
                   key={index}
                   data-star-letter=""
-                  className="absolute inset-x-0 block text-center text-[14px] leading-[14px] transition-opacity duration-300 ease-out [html[data-motion]_&]:opacity-0 [html[data-motion]_&]:group-data-burst/star:opacity-100"
+                  className={cn(
+                    "absolute inset-x-0 block text-center transition-opacity duration-300 ease-out [html[data-motion]_&]:opacity-0 [html[data-motion]_&]:group-data-burst/star:opacity-100",
+                    name.className,
+                  )}
                   style={{
-                    top: `calc((100% - ${LETTER}px) * ${fractions[index]})`,
-                    transitionDelay: `${(NAME.length - 1 - index) * 50}ms`,
+                    top:
+                      name.maxSpread === undefined
+                        ? `calc(${index * name.size + name.groups[index] * name.wordGap}px + (100% - ${restLength(name)}px) * ${fractions[index]})`
+                        : index * name.size +
+                          name.groups[index] * name.wordGap +
+                          name.maxSpread * fractions[index],
+                    height: name.size,
+                    transitionDelay: `${(count - 1 - index) * 50}ms`,
                   }}
                 >
-                  <span data-letter="">{letter}</span>
+                  <span data-letter="" className="inline-block">
+                    {letter}
+                  </span>
                 </span>
               ))}
             </div>

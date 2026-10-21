@@ -1,5 +1,6 @@
 // One-off import: copies the photos listed in content/photos.json from content-raw/
-// (Instagram downloads, not in Git) into assets/photos/ (in Git), at most 2000 px,
+// (Instagram downloads and Pexels stock stand-ins in content-raw/images/stock/, not in
+// Git) into assets/photos/ (in Git), at most 2000 px (stock: 960 px),
 // and stores each photo's size back into content/photos.json.
 // Usage: pnpm photos:import
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -12,10 +13,12 @@ for (const photo of list) {
   const out = `assets/photos/${photo.id}.jpg`;
   if (photo.source) {
     const src = `content-raw/images/${photo.source}`;
+    const max = photo.stock ? 960 : 2000;
     if (!existsSync(src)) throw new Error(`Missing source ${src} for "${photo.id}"`);
     await sharp(src)
       .rotate()
-      .resize({ width: 2000, height: 2000, fit: "inside", withoutEnlargement: true })
+      // Stock stand-ins are only shown small beside a dish.
+      .resize({ width: max, height: max, fit: "inside", withoutEnlargement: true })
       .jpeg({ quality: 86, mozjpeg: true })
       .toFile(out);
   }

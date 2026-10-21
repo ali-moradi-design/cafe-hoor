@@ -57,7 +57,7 @@ export function DateDial({ locale, className }: { locale: Locale; className?: st
   }, [today]);
 
   const box = cn("size-[245px] shrink-0", className);
-  if (!today) return <div aria-hidden className={box} />;
+  if (!today) return <div aria-hidden className={box} data-no-shimmer="" />;
 
   // Noon in Tehran on that day, so whole days can be added without time-zone slips.
   const now = new Date(`${today}T12:00:00+03:30`);
@@ -103,7 +103,7 @@ export function DateDial({ locale, className }: { locale: Locale; className?: st
 
   return (
     // The outer box is placed in the page's direction; the dial inside is always drawn left to right.
-    <div ref={ref} aria-hidden className={box}>
+    <div ref={ref} aria-hidden className={box} data-no-shimmer="">
       <div className="relative size-full" dir="ltr">
         {wheel(months, 110, 13, 66, "-rotate-[160deg] duration-[1300ms]")}
         {wheel(days, 80, 15, 120, "-rotate-[140deg] delay-200 duration-[1100ms]")}

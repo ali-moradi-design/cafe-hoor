@@ -29,14 +29,15 @@ function glideTo(target: HTMLElement) {
 
 /**
  * The reference site's navigation: page names written top to bottom on the start
- * edge, one letter per line, vertically centred. The language switch sits in the
- * top corner; away from home a small name links back.
+ * edge, one letter per line, vertically centred, starting with home. The language
+ * switch sits in the top corner; away from home the small name at the top links back too.
  */
 export function SiteNav({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname();
   const home = localePath(locale);
   const isHome = pathname === home;
   const links = [
+    { href: home, label: dict.nav.home },
     { href: localePath(locale, "menu"), label: dict.nav.menu },
     { href: `${home}#info`, label: dict.nav.info, anchor: "info" },
     { href: localePath(locale, "gallery"), label: dict.nav.gallery },
@@ -63,7 +64,7 @@ export function SiteNav({ locale, dict }: { locale: Locale; dict: Dictionary }) 
         aria-label={dict.common.sections}
         className="no-print fixed start-1.5 top-1/2 z-40 -translate-y-1/2 sm:start-5"
       >
-        <ul className="flex flex-col items-center gap-7 text-xs leading-[1.7] uppercase">
+        <ul className="flex flex-col items-center gap-7 text-xs leading-[1.7] uppercase [text-shadow:0_0_6px_rgb(0_0_0),0_0_14px_rgb(0_0_0/0.8)]">
           {links.map((link) => {
             const active = pathname === link.href;
             return (

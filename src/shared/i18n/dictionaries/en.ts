@@ -58,6 +58,7 @@ export const en = {
     noResults: "Nothing matches your search.",
     priceSoon: "Price soon",
     signature: "Favourite",
+    sample: "Sample photo",
     categories: "Menu categories",
     priceNote:
       "Dollar prices are approximate ($1 ≈ {rate} toman, {date}). The bill is in toman, plus {vat}% VAT.",
