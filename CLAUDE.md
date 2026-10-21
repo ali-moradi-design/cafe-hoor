@@ -29,5 +29,6 @@ Cafe site for Hoor Family (demo 7 of the portfolio roadmap). The full brief is
 
 ## graphify
 
-Use graphify in this repo (decided 2026-10-21). Build the graph once there is
-real code, not while the repo only holds docs.
+Use graphify in this repo (decided 2026-10-21). The graph of `src/` is in
+`graphify-out/` (not committed); read `graphify-out/GRAPH_REPORT.md` for
+architecture questions and run `/graphify src --update` after larger changes.
