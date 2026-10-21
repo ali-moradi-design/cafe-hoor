@@ -9,8 +9,9 @@ import type { MenuItem, Pricing } from "../model/schema";
 
 /**
  * One dish: the legend symbol and the name, the ingredients on one calm line
- * below, then the price; its Instagram photo beside it when it has one. The
- * lines are `[data-repel]` targets for `RepelField`.
+ * below, then the price, with its photo beside it: the cafe's own from Instagram,
+ * or a stock photo marked as a sample. The lines are `[data-repel]` targets for
+ * `RepelField`.
  */
 export function MenuItemLines({
   item,
@@ -22,19 +23,26 @@ export function MenuItemLines({
   item: MenuItem;
   locale: Locale;
   pricing: Pricing;
-  labels: { priceSoon: string; signature: string };
+  labels: { priceSoon: string; signature: string; sample: string };
   className?: string;
 }) {
+  const photo = item.photo ? getPhoto(item.photo) : undefined;
   const [name, ...ingredients] = menuLines(item, locale);
   const price = formatPrice(item.price, locale, pricing) ?? labels.priceSoon;
   const separator = locale === "fa" ? "، " : ", ";
 
   return (
     <article className={cn("flex gap-4 text-[13px] leading-[1.8]", className)}>
-      {item.photo ? (
-        <div className="aspect-[4/5] w-24 shrink-0 self-start overflow-hidden sm:w-28">
+      {photo ? (
+        <div className="relative aspect-[4/5] w-24 shrink-0 self-start overflow-hidden sm:w-28">
+          {photo.stock ? (
+            // Not the cafe's own photo: say so on the picture.
+            <span className="absolute inset-x-0 bottom-0 z-10 bg-black/60 px-1.5 py-0.5 text-center text-[10px] leading-[1.6] text-white">
+              {labels.sample}
+            </span>
+          ) : null}
           <Photo
-            photo={getPhoto(item.photo)}
+            photo={photo}
             locale={locale}
             sizes="112px"
             className="h-full transition-transform duration-700 hover:scale-105 motion-reduce:transition-none"

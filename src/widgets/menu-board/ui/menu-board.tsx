@@ -19,6 +19,7 @@ type Labels = {
   noResults: string;
   priceSoon: string;
   signature: string;
+  sample: string;
   categories: string;
 };
 

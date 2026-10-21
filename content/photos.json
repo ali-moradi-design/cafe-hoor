@@ -526,5 +526,744 @@
     "gallery": false,
     "width": 1152,
     "height": 1440
+  },
+  {
+    "id": "doogh",
+    "source": "2026-07-30_DbaVjsBnFuG_03.jpg",
+    "alt": {
+      "en": "Doogh in a metal cup",
+      "fa": "دوغ در لیوان فلزی"
+    },
+    "gallery": false,
+    "width": 1599,
+    "height": 2000
+  },
+  {
+    "id": "stock-shapouri",
+    "source": "stock/shapouri.jpg",
+    "alt": {
+      "en": "Sample photo of shapouri",
+      "fa": "عکس نمونهٔ شاپوری"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/6675091/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-tandoor-bread",
+    "source": "stock/tandoor-bread.jpg",
+    "alt": {
+      "en": "Sample photo of tandoor bread",
+      "fa": "عکس نمونهٔ سرویس نان تنوری"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/7405058/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-fries-mushroom-sauce",
+    "source": "stock/fries-mushroom-sauce.jpg",
+    "alt": {
+      "en": "Sample photo of fries with mushroom sauce",
+      "fa": "عکس نمونهٔ سیب زمینی با سس قارچ"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/37183931/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-fries",
+    "source": "stock/fries.jpg",
+    "alt": {
+      "en": "Sample photo of french fries",
+      "fa": "عکس نمونهٔ سیب زمینی ساده"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/8879369/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-mast-o-musir",
+    "source": "stock/mast-o-musir.jpg",
+    "alt": {
+      "en": "Sample photo of yogurt with shallots",
+      "fa": "عکس نمونهٔ ماست موسیر"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/14930565/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-crispy-caesar-salad",
+    "source": "stock/crispy-caesar-salad.jpg",
+    "alt": {
+      "en": "Sample photo of crispy chicken caesar",
+      "fa": "عکس نمونهٔ سالاد سزار سوخاری"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/19938473/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-pan-kabab",
+    "source": "stock/pan-kabab.jpg",
+    "alt": {
+      "en": "Sample photo of pan kabab",
+      "fa": "عکس نمونهٔ کباب تابه ای"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/37331151/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-chelo-kareh",
+    "source": "stock/chelo-kareh.jpg",
+    "alt": {
+      "en": "Sample photo of buttered rice",
+      "fa": "عکس نمونهٔ چلو کره"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/16474894/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-joojeh-plate",
+    "source": "stock/joojeh-plate.jpg",
+    "alt": {
+      "en": "Sample photo of joojeh plate",
+      "fa": "عکس نمونهٔ خوراک جوجه"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/38163950/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-mushroom-burger",
+    "source": "stock/mushroom-burger.jpg",
+    "alt": {
+      "en": "Sample photo of mushroom burger",
+      "fa": "عکس نمونهٔ ماشروم برگر"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/31992843/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-cheeseburger",
+    "source": "stock/cheeseburger.jpg",
+    "alt": {
+      "en": "Sample photo of cheeseburger",
+      "fa": "عکس نمونهٔ چیز برگر"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/9509204/"
+    },
+    "width": 764,
+    "height": 960
+  },
+  {
+    "id": "stock-golden-chicken-burger",
+    "source": "stock/golden-chicken-burger.jpg",
+    "alt": {
+      "en": "Sample photo of golden chicken burger",
+      "fa": "عکس نمونهٔ گلدن چیکن برگر"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/17121731/"
+    },
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "stock-lava-cake",
+    "source": "stock/lava-cake.jpg",
+    "alt": {
+      "en": "Sample photo of lava cake",
+      "fa": "عکس نمونهٔ لاوا کیک"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/27819688/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-tiramisu",
+    "source": "stock/tiramisu.jpg",
+    "alt": {
+      "en": "Sample photo of classic tiramisu",
+      "fa": "عکس نمونهٔ تیرامیسو کلاسیک"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/32260669/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-chocolate-cake",
+    "source": "stock/chocolate-cake.jpg",
+    "alt": {
+      "en": "Sample photo of chocolate cake",
+      "fa": "عکس نمونهٔ کیک شکلاتی"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/4110008/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-walnut-baklava",
+    "source": "stock/walnut-baklava.jpg",
+    "alt": {
+      "en": "Sample photo of walnut baklava",
+      "fa": "عکس نمونهٔ سرویس باقلوا گردو"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/20183033/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-cheesecake",
+    "source": "stock/cheesecake.jpg",
+    "alt": {
+      "en": "Sample photo of cheesecake of the day",
+      "fa": "عکس نمونهٔ چیز کیک روز"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/39398358/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-turkish-coffee",
+    "source": "stock/turkish-coffee.jpg",
+    "alt": {
+      "en": "Sample photo of turkish coffee",
+      "fa": "عکس نمونهٔ ترک"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/11073298/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-affogato",
+    "source": "stock/affogato.jpg",
+    "alt": {
+      "en": "Sample photo of affogato",
+      "fa": "عکس نمونهٔ آفوگاتو"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/33144564/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-hazelnut-latte",
+    "source": "stock/hazelnut-latte.jpg",
+    "alt": {
+      "en": "Sample photo of hazelnut latte",
+      "fa": "عکس نمونهٔ لاته فندق"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/5169108/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-cinnamon-latte",
+    "source": "stock/cinnamon-latte.jpg",
+    "alt": {
+      "en": "Sample photo of cinnamon latte",
+      "fa": "عکس نمونهٔ لاته دارچین"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/18020336/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-vanilla-latte",
+    "source": "stock/vanilla-latte.jpg",
+    "alt": {
+      "en": "Sample photo of vanilla latte",
+      "fa": "عکس نمونهٔ لاته وانیل"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/32823311/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-mocha",
+    "source": "stock/mocha.jpg",
+    "alt": {
+      "en": "Sample photo of mocha",
+      "fa": "عکس نمونهٔ لاته شکلات"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/14761085/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-coconut-latte",
+    "source": "stock/coconut-latte.jpg",
+    "alt": {
+      "en": "Sample photo of coconut latte",
+      "fa": "عکس نمونهٔ لاته نارگیل"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/8605909/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-mahrokh",
+    "source": "stock/mahrokh.jpg",
+    "alt": {
+      "en": "Sample photo of mahrokh",
+      "fa": "عکس نمونهٔ ماهرخ"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/12540646/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-espresso",
+    "source": "stock/espresso.jpg",
+    "alt": {
+      "en": "Sample photo of espresso",
+      "fa": "عکس نمونهٔ اسپرسو"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/18604200/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-masala-chai",
+    "source": "stock/masala-chai.jpg",
+    "alt": {
+      "en": "Sample photo of masala chai",
+      "fa": "عکس نمونهٔ ماسالا"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/37186989/"
+    },
+    "width": 655,
+    "height": 960
+  },
+  {
+    "id": "stock-white-chocolate",
+    "source": "stock/white-chocolate.jpg",
+    "alt": {
+      "en": "Sample photo of white hot chocolate",
+      "fa": "عکس نمونهٔ وایت چاکلت"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/13173784/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-hot-chocolate",
+    "source": "stock/hot-chocolate.jpg",
+    "alt": {
+      "en": "Sample photo of hot chocolate",
+      "fa": "عکس نمونهٔ هات چاکلت"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/10002425/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-hot-biscuit-milk",
+    "source": "stock/hot-biscuit-milk.jpg",
+    "alt": {
+      "en": "Sample photo of hot biscuit milk",
+      "fa": "عکس نمونهٔ شیر بیسکوییت داغ"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/34969154/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-golchin-tea",
+    "source": "stock/golchin-tea.jpg",
+    "alt": {
+      "en": "Sample photo of golchin tea",
+      "fa": "عکس نمونهٔ چای گلچین"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/20590310/"
+    },
+    "width": 768,
+    "height": 960
+  },
+  {
+    "id": "stock-lahijan-tea",
+    "source": "stock/lahijan-tea.jpg",
+    "alt": {
+      "en": "Sample photo of lahijan tea",
+      "fa": "عکس نمونهٔ چای لاهیجان"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/36798139/"
+    },
+    "width": 540,
+    "height": 960
+  },
+  {
+    "id": "stock-tabriz-infusion",
+    "source": "stock/tabriz-infusion.jpg",
+    "alt": {
+      "en": "Sample photo of tabriz",
+      "fa": "عکس نمونهٔ تبریز"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/5389613/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-harir",
+    "source": "stock/harir.jpg",
+    "alt": {
+      "en": "Sample photo of harir",
+      "fa": "عکس نمونهٔ حریر"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/33283843/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-lemonade",
+    "source": "stock/lemonade.jpg",
+    "alt": {
+      "en": "Sample photo of lemonade",
+      "fa": "عکس نمونهٔ لیموناد"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/16976656/"
+    },
+    "width": 768,
+    "height": 960
+  },
+  {
+    "id": "stock-mahtab",
+    "source": "stock/mahtab.jpg",
+    "alt": {
+      "en": "Sample photo of mahtab",
+      "fa": "عکس نمونهٔ مهتاب"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/20371528/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-shahriar",
+    "source": "stock/shahriar.jpg",
+    "alt": {
+      "en": "Sample photo of shahriar",
+      "fa": "عکس نمونهٔ شهریار"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/37680613/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-diba",
+    "source": "stock/diba.jpg",
+    "alt": {
+      "en": "Sample photo of diba",
+      "fa": "عکس نمونهٔ دیبا"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/24038051/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-zarrin",
+    "source": "stock/zarrin.jpg",
+    "alt": {
+      "en": "Sample photo of zarrin",
+      "fa": "عکس نمونهٔ زرین"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/14930476/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-nava",
+    "source": "stock/nava.jpg",
+    "alt": {
+      "en": "Sample photo of nava",
+      "fa": "عکس نمونهٔ نوا"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/29799035/"
+    },
+    "width": 720,
+    "height": 960
+  },
+  {
+    "id": "stock-nasim",
+    "source": "stock/nasim.jpg",
+    "alt": {
+      "en": "Sample photo of nasim",
+      "fa": "عکس نمونهٔ نسیم"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/5946990/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-aghigh",
+    "source": "stock/aghigh.jpg",
+    "alt": {
+      "en": "Sample photo of aghigh",
+      "fa": "عکس نمونهٔ عقیق"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/17612786/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-seasonal-juice",
+    "source": "stock/seasonal-juice.jpg",
+    "alt": {
+      "en": "Sample photo of seasonal juice",
+      "fa": "عکس نمونهٔ آبمیوه فصل"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/5668213/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-khazan",
+    "source": "stock/khazan.jpg",
+    "alt": {
+      "en": "Sample photo of khazan",
+      "fa": "عکس نمونهٔ خزان"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/27969864/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-wild-berry-float",
+    "source": "stock/wild-berry-float.jpg",
+    "alt": {
+      "en": "Sample photo of wild berry float",
+      "fa": "عکس نمونهٔ جگر گشای جنگلی"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/6542639/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-salty-crunch-shake",
+    "source": "stock/salty-crunch-shake.jpg",
+    "alt": {
+      "en": "Sample photo of salty crunch shake",
+      "fa": "عکس نمونهٔ شیک ترد نمکی"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/28496635/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-makhmal-shake",
+    "source": "stock/makhmal-shake.jpg",
+    "alt": {
+      "en": "Sample photo of makhmal shake",
+      "fa": "عکس نمونهٔ شیک مخمل"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/32647253/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-oreo-shake",
+    "source": "stock/oreo-shake.jpg",
+    "alt": {
+      "en": "Sample photo of chocolate oreo shake",
+      "fa": "عکس نمونهٔ شیک شکلات اورئو"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/16825488/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-azar",
+    "source": "stock/azar.jpg",
+    "alt": {
+      "en": "Sample photo of azar",
+      "fa": "عکس نمونهٔ آذر"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/5668182/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-lime-soda",
+    "source": "stock/lime-soda.jpg",
+    "alt": {
+      "en": "Sample photo of lime soda",
+      "fa": "عکس نمونهٔ سودا لیمو"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/36268523/"
+    },
+    "width": 641,
+    "height": 960
+  },
+  {
+    "id": "stock-sayeh",
+    "source": "stock/sayeh.jpg",
+    "alt": {
+      "en": "Sample photo of sayeh",
+      "fa": "عکس نمونهٔ سایه"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/8679169/"
+    },
+    "width": 640,
+    "height": 960
+  },
+  {
+    "id": "stock-cortado",
+    "source": "stock/cortado.jpg",
+    "alt": {
+      "en": "Sample photo of cortado",
+      "fa": "عکس نمونهٔ کورتادو"
+    },
+    "gallery": false,
+    "stock": {
+      "url": "https://www.pexels.com/photo/9501559/"
+    },
+    "width": 565,
+    "height": 960
   }
 ]

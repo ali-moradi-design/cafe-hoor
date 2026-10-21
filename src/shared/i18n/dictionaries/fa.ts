@@ -60,6 +60,7 @@ export const fa: Dictionary = {
     noResults: "چیزی با جست‌وجوی شما پیدا نشد.",
     priceSoon: "قیمت به‌زودی",
     signature: "محبوب",
+    sample: "عکس نمونه",
     categories: "دسته‌های منو",
     priceNote: "قیمت‌ها به تومان است و {vat}٪ مالیات بر ارزش افزوده به صورت‌حساب اضافه می‌شود.",
   },

@@ -9,6 +9,11 @@ const photoSchema = z.object({
   source: z.string().optional(),
   alt: z.object({ en: z.string().min(1), fa: z.string().min(1) }),
   gallery: z.boolean(),
+  /**
+   * Set for a free stock photo (Pexels licence) standing in for a dish the cafe has
+   * not posted; the site marks it as a sample. `url` is the photo's Pexels page.
+   */
+  stock: z.object({ url: z.url() }).optional(),
   width: z.number().int().positive(),
   height: z.number().int().positive(),
 });
