@@ -29,14 +29,15 @@ function glideTo(target: HTMLElement) {
 
 /**
  * The reference site's navigation: page names written top to bottom on the start
- * edge, one letter per line, vertically centred. The language switch sits in the
- * top corner; away from home a small name links back.
+ * edge, one letter per line, vertically centred, starting with home. The language
+ * switch sits in the top corner; away from home the small name at the top links back too.
  */
 export function SiteNav({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname();
   const home = localePath(locale);
   const isHome = pathname === home;
   const links = [
+    { href: home, label: dict.nav.home },
     { href: localePath(locale, "menu"), label: dict.nav.menu },
     { href: `${home}#info`, label: dict.nav.info, anchor: "info" },
     { href: localePath(locale, "gallery"), label: dict.nav.gallery },
