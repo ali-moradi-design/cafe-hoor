@@ -64,7 +64,7 @@ export function SiteNav({ locale, dict }: { locale: Locale; dict: Dictionary }) 
         aria-label={dict.common.sections}
         className="no-print fixed start-1.5 top-1/2 z-40 -translate-y-1/2 sm:start-5"
       >
-        <ul className="flex flex-col items-center gap-7 text-xs leading-[1.7] uppercase">
+        <ul className="flex flex-col items-center gap-7 text-xs leading-[1.7] uppercase [text-shadow:0_0_6px_rgb(0_0_0),0_0_14px_rgb(0_0_0/0.8)]">
           {links.map((link) => {
             const active = pathname === link.href;
             return (

@@ -59,6 +59,47 @@
   }
 }
 
+/*
+ * Photos on the dark pages: a little desaturated and darker, with the page grain
+ * screened over them and a soft vignette, like prints in low light. Full colour
+ * on hover.
+ */
+.film {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.film img {
+  filter: grayscale(0.35) sepia(0.12) contrast(1.08) brightness(0.8);
+  transition: filter 0.8s ease;
+}
+
+.film::before,
+.film::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.film::before {
+  background: url("/textures/grain.jpg") center / 420px;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+
+.film::after {
+  background: radial-gradient(ellipse at center, transparent 50%, rgb(0 0 0 / 0.55) 100%);
+}
+
+@media (hover: hover) {
+  .film:hover img {
+    filter: none;
+  }
+}
+
 /* Slow letter pulse, switched on and off at random by `MotionDriver`. */
 @keyframes shimmer {
   from {
@@ -110,6 +151,11 @@ html[data-scrolled] .scroll-dots {
 }
 
 @media print {
+  .film::before,
+  .film::after {
+    display: none;
+  }
+
   .no-print {
     display: none !important;
   }

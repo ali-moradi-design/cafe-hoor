@@ -89,12 +89,11 @@ export function HeroScatter({ photos, locale }: { photos: PhotoData[]; locale: L
           <div
             key={photo.id}
             data-card=""
-            className="absolute left-(--xm) w-[calc(var(--m)*1vw)] will-change-transform md:left-(--x) md:w-[calc(var(--w)*1vw)]"
+            className="absolute w-(--cw) will-change-transform [--cw:calc(var(--m)*1vw)] [--gap:56px] sm:[--gap:92px] md:[--cw:calc(var(--w)*1vw)]"
             style={
               {
-                // Phones: squeezed between the side navigation on either edge.
-                "--xm": `min(${12 + slot.x * 0.76}%, calc(88% - ${slot.m}vw))`,
-                "--x": `${slot.x}%`,
+                // Never under the side navigation (`--gap` is its band), on either edge.
+                left: `clamp(var(--gap), ${slot.x}%, calc(100% - var(--gap) - var(--cw)))`,
                 top: `${slot.y}%`,
                 transform: `rotate(${slot.tilt}deg)`,
                 "--w": slot.w,
@@ -106,7 +105,7 @@ export function HeroScatter({ photos, locale }: { photos: PhotoData[]; locale: L
               className={cn(
                 "aspect-[4/5] overflow-hidden shadow-[0_18px_40px_-12px_rgb(0_0_0/0.7)]",
                 "brightness-50 grayscale transition-[clip-path,filter] duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] [clip-path:inset(100%_0_0_0)]",
-                "group-data-ready/scatter:brightness-90 group-data-ready/scatter:grayscale-[0.25] group-data-ready/scatter:[clip-path:inset(0_0_0_0)]",
+                "group-data-ready/scatter:brightness-100 group-data-ready/scatter:grayscale-0 group-data-ready/scatter:[clip-path:inset(0_0_0_0)]",
                 "motion-reduce:transition-none",
               )}
               style={{ transitionDelay: `${300 + index * 140}ms` }}
