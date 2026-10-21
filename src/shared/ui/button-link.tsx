@@ -3,27 +3,25 @@ import type { ComponentProps } from "react";
 
 import { cn } from "../lib";
 
-type Variant = "primary" | "outline" | "light";
+type Variant = "outline" | "solid";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-forest text-cream hover:bg-forest-deep",
-  outline: "border-forest text-forest border-2 hover:bg-forest hover:text-cream",
-  light: "bg-cream text-forest hover:bg-sand",
+  // Thin red frame with a flat mint shadow, as on printed menus.
+  outline: "border border-red bg-white text-red offset-mint hover:bg-red hover:text-white",
+  solid: "bg-red text-white hover:bg-red-deep",
 };
 
+export const buttonClass = (variant: Variant = "outline", className?: string) =>
+  cn(
+    "inline-flex min-h-11 items-center justify-center gap-2 px-5 py-2 font-display text-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-4",
+    variants[variant],
+    className,
+  );
+
 export function ButtonLink({
-  variant = "primary",
+  variant = "outline",
   className,
   ...props
 }: ComponentProps<typeof Link> & { variant?: Variant }) {
-  return (
-    <Link
-      className={cn(
-        "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-2.5 font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
-        variants[variant],
-        className,
-      )}
-      {...props}
-    />
-  );
+  return <Link className={buttonClass(variant, className)} {...props} />;
 }

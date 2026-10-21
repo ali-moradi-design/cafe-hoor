@@ -69,3 +69,15 @@ export const SearchIcon = (props: IconProps) => (
     <path d="m20 20-3.5-3.5" />
   </Svg>
 );
+
+export const MenuIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M4 7h16M4 12h16M4 17h16" />
+  </Svg>
+);
+
+export const CloseIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="m6 6 12 12M18 6 6 18" />
+  </Svg>
+);

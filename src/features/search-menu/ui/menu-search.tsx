@@ -14,14 +14,14 @@ export function MenuSearch({
   return (
     <label className="relative block">
       <span className="sr-only">{label}</span>
-      <SearchIcon className="pointer-events-none absolute start-4 top-1/2 -translate-y-1/2 text-xl text-ink/45" />
+      <SearchIcon className="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-xl text-pine" />
       <input
         type="search"
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={label}
         enterKeyHint="search"
-        className="w-full rounded-full border border-sand bg-white py-3 ps-12 pe-4 text-base outline-none focus:border-forest focus:ring-4 focus:ring-forest/20"
+        className="min-h-11 w-full border border-pine bg-white py-2 ps-10 pe-3 text-base text-ink outline-none placeholder:text-ink/60 focus:ring-2 focus:ring-red"
       />
     </label>
   );

@@ -1,27 +1,34 @@
 import type { ReactNode } from "react";
 
+import { cn } from "../lib";
+
+/** Big red condensed title with a pastel echo; `center` for story sections. */
 export function SectionHeading({
   title,
   lead,
   as: Tag = "h2",
+  center = false,
+  className,
 }: {
   title: ReactNode;
   lead?: ReactNode;
   as?: "h1" | "h2";
+  center?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="mb-8 max-w-2xl">
+    <div className={cn("mb-10", center ? "mx-auto text-center" : "max-w-2xl", className)}>
       <Tag
-        className={
-          Tag === "h1"
-            ? "text-4xl font-black text-forest sm:text-5xl"
-            : "text-3xl font-extrabold text-forest sm:text-4xl"
-        }
+        className={cn(
+          "font-display text-red uppercase title-echo",
+          Tag === "h1" ? "text-5xl sm:text-7xl" : "text-4xl sm:text-6xl",
+        )}
       >
         {title}
       </Tag>
-      <span aria-hidden className="mt-3 block h-1 w-14 rounded-full bg-gold" />
-      {lead ? <p className="mt-4 text-lg text-ink/75">{lead}</p> : null}
+      {lead ? (
+        <p className={cn("mt-4 text-lg text-ink/80", center && "mx-auto max-w-2xl")}>{lead}</p>
+      ) : null}
     </div>
   );
 }

@@ -43,22 +43,17 @@ export function VisitInfo({
   ];
 
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
-        <li
-          key={card.title}
-          className="flex flex-col rounded-2xl border border-sand bg-white/70 p-5"
-        >
-          <span className="grid size-11 place-items-center rounded-full bg-forest/10 text-xl text-forest">
-            {card.icon}
-          </span>
-          <Heading className="mt-4 font-bold text-forest">{card.title}</Heading>
-          <p className="mt-1 flex-1 text-ink/75">{card.body}</p>
+        <li key={card.title} className="flex flex-col border-t border-red pt-5" data-reveal>
+          <span className="text-2xl text-red">{card.icon}</span>
+          <Heading className="mt-3 font-display text-2xl text-red">{card.title}</Heading>
+          <p className="mt-1 flex-1 text-lg text-ink">{card.body}</p>
           {card.action ? (
             <a
               href={card.action.href}
               {...(card.action.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="mt-3 font-bold text-forest underline decoration-gold decoration-2 underline-offset-4"
+              className="mt-4 self-start border border-red px-4 py-1.5 font-display text-lg text-red offset-mint transition-colors hover:bg-red hover:text-white"
             >
               {card.action.label}
             </a>

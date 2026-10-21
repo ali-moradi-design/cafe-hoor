@@ -1,13 +1,22 @@
-import Link from "next/link";
-
-import { CafeJsonLd, formatHours, getCafe } from "@/entities/cafe";
+import { CafeJsonLd, getCafe } from "@/entities/cafe";
 import { getPricing, getSignatureItems, MenuItemCard } from "@/entities/menu";
 import { getDictionary, localePath, type Locale } from "@/shared/i18n";
 import { getPhoto } from "@/shared/photos";
-import { ButtonLink, Container, Photo, SectionHeading } from "@/shared/ui";
+import { ButtonLink, Container, SectionHeading, WordReveal } from "@/shared/ui";
+import { BookingCard } from "@/widgets/booking-card";
+import { HeroSlider } from "@/widgets/hero-slider";
+import { PhotoCarousel } from "@/widgets/photo-carousel";
 import { VisitInfo } from "@/widgets/visit-info";
 
-const moments = ["courtyard-pool", "wall-lamp", "breakfast-by-pool", "arched-window"];
+const heroPhotos = [
+  "fountain",
+  "english-breakfast",
+  "courtyard-pool",
+  "kabab-platter",
+  "brick-hall",
+  "pepperoni",
+];
+const housePhotos = ["brick-arches", "wall-lamp", "corner-table", "arched-window", "dining-room"];
 
 export function HomeView({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -18,47 +27,34 @@ export function HomeView({ locale }: { locale: Locale }) {
   return (
     <>
       <CafeJsonLd cafe={cafe} locale={locale} />
+      <h1 className="sr-only">{cafe.name[locale]}</h1>
 
-      <section className="relative overflow-hidden bg-forest text-cream">
-        <div aria-hidden className="absolute inset-0 tile-pattern opacity-15" />
-        <Container className="relative grid items-center gap-10 py-12 md:grid-cols-2 md:py-20">
-          <div>
-            <p className="font-bold text-gold">
-              {dict.common.everyDay}
-              {dict.common.comma}
-              {formatHours(cafe.hours, locale)}
-            </p>
-            <h1 className="mt-3 text-4xl leading-tight font-black sm:text-5xl">
-              {dict.home.title}
-            </h1>
-            <p className="mt-5 max-w-lg text-lg text-cream/85">{dict.home.lead}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={localePath(locale, "menu")} variant="light">
-                {dict.common.viewMenu}
-              </ButtonLink>
-              <a
-                href={`tel:${cafe.phone}`}
-                className="inline-flex min-h-11 items-center rounded-full border-2 border-cream/50 px-6 py-2.5 font-bold transition-colors hover:bg-cream hover:text-forest"
-              >
-                {dict.common.call}
-              </a>
-            </div>
-          </div>
-          <div className="aspect-4/5 w-full max-w-md justify-self-center overflow-hidden rounded-t-full border-4 border-gold/60 bg-forest-deep md:justify-self-end">
-            <Photo
-              photo={getPhoto("fountain")}
-              locale={locale}
-              sizes="(min-width: 768px) 448px, 90vw"
-              priority
-            />
-          </div>
+      <HeroSlider photos={heroPhotos.map(getPhoto)} locale={locale} labels={dict.common} />
+
+      <section className="py-24 sm:py-32">
+        <Container className="max-w-4xl">
+          <SectionHeading title={dict.home.storyTitle} center />
+          <WordReveal text={dict.home.storyText} />
         </Container>
       </section>
 
-      <section className="py-16">
-        <Container>
-          <SectionHeading title={dict.home.signatureTitle} />
-          <div className="grid gap-3 md:grid-cols-2">
+      <section className="pb-24 sm:pb-32">
+        <Container className="grid items-center gap-14 md:grid-cols-2">
+          <div data-reveal>
+            <PhotoCarousel
+              photos={housePhotos.map(getPhoto)}
+              locale={locale}
+              labels={dict.common}
+            />
+          </div>
+          <WordReveal text={dict.home.welcome} />
+        </Container>
+      </section>
+
+      <section className="bg-mint-soft py-20 sm:py-28">
+        <Container className="max-w-5xl">
+          <SectionHeading title={dict.home.menuTitle} lead={dict.home.menuLead} center />
+          <div className="grid gap-x-12 gap-y-6 md:grid-cols-2" data-reveal>
             {signature.map((item) => (
               <MenuItemCard
                 key={item.id}
@@ -69,52 +65,19 @@ export function HomeView({ locale }: { locale: Locale }) {
               />
             ))}
           </div>
-          <ButtonLink href={localePath(locale, "menu")} variant="outline" className="mt-8">
-            {dict.common.viewMenu}
-          </ButtonLink>
-        </Container>
-      </section>
-
-      <section className="bg-sand/50 py-16">
-        <Container className="grid items-center gap-10 md:grid-cols-2">
-          <div className="aspect-4/5 overflow-hidden rounded-3xl bg-sand md:aspect-4/3">
-            <Photo
-              photo={getPhoto("brick-arches")}
-              locale={locale}
-              sizes="(min-width: 768px) 540px, 92vw"
-            />
-          </div>
-          <div>
-            <SectionHeading title={dict.home.storyTitle} />
-            <p className="text-lg leading-loose text-ink/80">{dict.home.storyText}</p>
-            <ButtonLink href={localePath(locale, "about")} variant="outline" className="mt-6">
-              {dict.home.readMore}
-            </ButtonLink>
+          <div className="mt-12 text-center">
+            <ButtonLink href={localePath(locale, "menu")}>{dict.home.fullMenu}</ButtonLink>
           </div>
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="py-24 sm:py-32">
         <Container>
-          <SectionHeading title={dict.gallery.title} lead={dict.gallery.lead} />
-          <ul className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
-            {moments.map((id) => (
-              <li key={id} className="aspect-4/5 overflow-hidden rounded-2xl bg-sand">
-                <Link href={localePath(locale, "gallery")} className="block h-full">
-                  <Photo
-                    photo={getPhoto(id)}
-                    locale={locale}
-                    sizes="(min-width: 1024px) 280px, 46vw"
-                    className="transition-transform duration-500 hover:scale-105 motion-reduce:transition-none"
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <BookingCard locale={locale} dict={dict} cafe={cafe} photo={getPhoto("chelo-joojeh")} />
         </Container>
       </section>
 
-      <section className="pb-16">
+      <section className="pb-24">
         <Container>
           <SectionHeading title={dict.home.visitTitle} />
           <VisitInfo locale={locale} dict={dict} cafe={cafe} />

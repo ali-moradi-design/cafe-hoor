@@ -5,7 +5,7 @@ export function PrintButton({ label }: { label: string }) {
     <button
       type="button"
       onClick={() => window.print()}
-      className="min-h-11 rounded-full bg-forest px-6 font-bold text-cream hover:bg-forest-deep print:hidden"
+      className="min-h-11 border border-red bg-white px-6 font-display text-lg text-red offset-mint hover:bg-red hover:text-white print:hidden"
     >
       {label}
     </button>

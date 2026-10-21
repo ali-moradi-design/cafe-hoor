@@ -16,20 +16,20 @@ export async function QrView({ locale }: { locale: Locale }) {
     type: "svg",
     margin: 1,
     errorCorrectionLevel: "M",
-    color: { dark: "#343f26", light: "#ffffff" },
+    color: { dark: "#2a432e", light: "#ffffff" },
   });
 
   return (
     <Container className="py-12">
       <div className="print:hidden">
-        <h1 className="text-4xl font-black text-forest">{dict.qr.title}</h1>
+        <h1 className="font-display text-5xl text-red uppercase">{dict.qr.title}</h1>
         <p className="mt-3 max-w-xl text-ink/70">{dict.qr.lead}</p>
         <div className="mt-6">
           <PrintButton label={dict.qr.print} />
         </div>
       </div>
-      <div className="mx-auto mt-10 max-w-sm rounded-3xl border-4 border-forest bg-white p-8 text-center print:mt-0 print:border-2">
-        <p className="text-2xl font-black text-forest">{cafe.name.fa}</p>
+      <div className="mx-auto mt-10 max-w-sm rounded-3xl border-4 border-pine bg-white p-8 text-center print:mt-0 print:border-2">
+        <p className="text-2xl font-black text-pine">{cafe.name.fa}</p>
         <p className="text-sm font-bold text-ink/60" lang="en">
           {cafe.name.en}
         </p>
@@ -40,7 +40,7 @@ export async function QrView({ locale }: { locale: Locale }) {
           // SVG markup generated at build time by the `qrcode` package.
           dangerouslySetInnerHTML={{ __html: svg }}
         />
-        <p className="mt-5 font-bold text-forest">{dict.qr.scan}</p>
+        <p className="mt-5 font-bold text-pine">{dict.qr.scan}</p>
         <p className="mt-1 text-xs text-ink/50" dir="ltr">
           {menuUrl.replace(/^https:\/\//, "")}
         </p>

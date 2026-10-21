@@ -78,6 +78,8 @@ test("no horizontal scrolling on any page", async ({ page }) => {
 
 for (const path of ["/fa/", "/en/", "/fa/menu/", "/en/menu/", "/fa/contact/", "/fa/gallery/"]) {
   test(`no serious accessibility problems on ${path}`, async ({ page }) => {
+    // Check the settled page, not elements caught halfway through a fade-in.
+    await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto(path);
     const results = await new AxeBuilder({ page })
       .exclude(".leaflet-container") // third-party map tiles

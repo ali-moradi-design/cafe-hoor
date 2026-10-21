@@ -9,6 +9,14 @@ export const en = {
     instagram: "Instagram",
     everyDay: "Every day",
     comma: ", ",
+    book: "Book a table",
+    tehranTime: "Time in Tehran",
+    sections: "Pages",
+    openNav: "Open the menu",
+    closeNav: "Close the menu",
+    prev: "Previous",
+    next: "Next",
+    slide: "Photo {n}",
   },
   home: {
     title: "A garden cafe in the heart of Tehran",
@@ -18,7 +26,15 @@ export const en = {
     visitTitle: "Visit us",
     storyTitle: "Our story",
     storyText:
-      "Hoor is a family cafe and restaurant with a green courtyard, blue tiles and a quiet pool. Come for coffee, stay for a meal.",
+      "Hoor is a family cafe and restaurant in an old house near Haft-e Tir Square. A green courtyard, turquoise tiles and a quiet pool keep the city outside. Come for coffee in the morning, stay for lunch, and end the day with friends by the water.",
+    welcome:
+      "Whoever you are, wherever you come from, there is a table for you at Hoor. Iranian breakfast, kababs and stews sit next to pizza, pasta and cold drinks from our bar, every day from morning to late evening.",
+    menuTitle: "From our menu",
+    menuLead: "A few of the dishes and drinks our guests order most.",
+    fullMenu: "See the full menu",
+    bookTitle: "Book a table",
+    bookText:
+      "Call us to reserve a table for breakfast, lunch or dinner. For birthdays and larger groups, tell us ahead and we will prepare the courtyard for you.",
     readMore: "More about us",
   },
   menu: {

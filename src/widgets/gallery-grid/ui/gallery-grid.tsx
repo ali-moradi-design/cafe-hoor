@@ -16,16 +16,16 @@ export function GalleryGrid({
 }) {
   return (
     <GalleryLightbox labels={labels}>
-      <ul className="columns-2 gap-2 sm:columns-3 sm:gap-3 lg:columns-4">
+      <ul className="columns-2 gap-5 sm:columns-3 sm:gap-6 lg:columns-4">
         {photos.map((photo, index) => {
           const large = photoLargest(photo);
           return (
-            <li key={photo.id} className="mb-2 break-inside-avoid sm:mb-3">
+            <li key={photo.id} className="mb-5 break-inside-avoid sm:mb-6" data-reveal>
               <a
                 href={large.src}
                 data-pswp-width={large.width}
                 data-pswp-height={large.height}
-                className="block overflow-hidden rounded-xl bg-sand focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="block overflow-hidden bg-mint-soft offset-mint focus-visible:outline-2 focus-visible:outline-offset-4"
               >
                 <Photo
                   photo={photo}

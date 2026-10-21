@@ -1,28 +1,41 @@
 @import "tailwindcss";
 
+/*
+ * Look: white pages, red line work and type, mint and pastel-green panels
+ * (the reference site's pink is replaced by pastel greens).
+ */
 @theme {
-  --color-forest: #4a5a37;
-  --color-forest-deep: #343f26;
-  --color-sage: #8b9a6b;
-  --color-cream: #f7f2e7;
-  --color-sand: #e8dcc4;
-  --color-gold: #c19a5b;
-  --color-gold-deep: #6b4f1f;
-  --color-ink: #1f2a22;
-  --font-sans: var(--font-vazirmatn), ui-sans-serif, system-ui, sans-serif;
+  --color-red: #d8241f;
+  --color-red-deep: #c9211d;
+  --color-mint: #9edcc5;
+  --color-mint-soft: #d8f3ea;
+  --color-sage-soft: #e9f6ef;
+  /* Faded words before they "light up"; only for text 24px and larger (3:1). */
+  --color-pastel: #5e9f80;
+  --color-pine: #2a432e;
+  --color-ink: #333333;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), var(--font-body), sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    --font-body: var(--font-roboto);
+    --font-display-face: var(--font-oswald);
+  }
+
+  html:lang(fa) {
+    --font-body: var(--font-vazirmatn);
+    --font-display-face: var(--font-lalezar);
   }
 
   body {
-    @apply bg-cream font-sans text-ink antialiased;
+    @apply bg-white font-sans font-light text-ink antialiased;
   }
 
   :focus-visible {
-    outline-color: var(--color-gold);
+    outline-color: var(--color-red);
   }
 }
 
@@ -34,18 +47,79 @@
   }
 }
 
-/* Soft tile motif inspired by the cafe's blue-tiled courtyard. */
-@utility tile-pattern {
-  background-image:
-    radial-gradient(circle at 50% 0, rgb(255 255 255 / 0.18) 0 18%, transparent 19%),
-    radial-gradient(circle at 0 50%, rgb(255 255 255 / 0.12) 0 18%, transparent 19%),
-    radial-gradient(circle at 100% 50%, rgb(255 255 255 / 0.12) 0 18%, transparent 19%),
-    radial-gradient(circle at 50% 100%, rgb(255 255 255 / 0.18) 0 18%, transparent 19%);
-  background-size: 48px 48px;
+/* Condensed display type: headings, buttons, tab labels. */
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+/* Big headings with a soft pastel echo behind the letters. */
+@utility title-echo {
+  text-shadow: 3px 3px 0 var(--color-mint-soft);
+}
+
+/* Flat offset shadow under photos, cards and buttons. */
+@utility offset-mint {
+  box-shadow: 6px 6px 0 0 var(--color-mint);
+}
+
+@utility offset-mint-lg {
+  box-shadow: 12px 12px 0 0 var(--color-mint);
+}
+
+@utility offset-red {
+  box-shadow: 8px 8px 0 0 var(--color-red);
+}
+
+/* Fade-up on scroll; only when JavaScript runs (see the inline script in the layout). */
+html[data-js] [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+html[data-js] [data-reveal][data-shown] {
+  opacity: 1;
+  transform: none;
+}
+
+/* First-visit splash: the logo on white, then the page. */
+@keyframes splash-out {
+  0%,
+  70% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.splash {
+  animation: splash-out 1.4s ease forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  html[data-js] [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .splash {
+    display: none;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
   }
 }
