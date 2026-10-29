@@ -5,7 +5,7 @@ Cafe site for Hoor Family (demo 7 of the portfolio roadmap). The full brief is
 
 ## Workflow
 
-- Stack: Next.js App Router with static export, Feature-Sliced Design,
+- Stack: Next.js App Router (`output: "standalone"`, a container on the VPS), Feature-Sliced Design,
   TypeScript strict, ESLint, Prettier, pnpm (details in the brief). Explain
   each decision as it appears.
 - FSD layers: `app`, `views` (FSD `pages`, renamed), `widgets`, `features`,

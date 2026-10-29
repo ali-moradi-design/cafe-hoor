@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// Runs against the built static site (`pnpm build` first), like production.
+// Runs against the built standalone server (`pnpm build` first), like production.
 export default defineConfig({
   testDir: "e2e",
   fullyParallel: true,
@@ -13,7 +13,7 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {
-    command: "node scripts/serve-out.mjs 4322",
+    command: "node scripts/serve.mjs 4322",
     url: "http://127.0.0.1:4322/fa/",
     reuseExistingServer: !process.env.CI,
   },

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm photos && next dev",
-    "build": "pnpm photos && next build && node scripts/flatten-segments.mjs",
+    "build": "pnpm photos && next build && node scripts/standalone.mjs",
     "photos": "node scripts/build-photos.mjs",
     "photos:import": "node scripts/import-photos.mjs",
     "lint": "eslint",
@@ -13,7 +13,7 @@
     "test:e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "preview": "node scripts/serve-out.mjs"
+    "preview": "node scripts/serve.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

@@ -1,8 +1,8 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "node scripts/serve-out.mjs 4323",
-      "startServerReadyPattern": "out/ on",
+      "startServerCommand": "node scripts/serve.mjs 4323",
+      "startServerReadyPattern": "standalone server on",
       "url": [
         "http://127.0.0.1:4323/fa/",
         "http://127.0.0.1:4323/fa/menu/",
