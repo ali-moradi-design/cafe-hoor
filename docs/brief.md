@@ -7,7 +7,8 @@ sessions; this file is the handoff.
 
 - The cafe is real: Instagram page https://www.instagram.com/hoorfamily/ . The
   owner has given permission to use the brand, photos, menu and prices.
-- Static site (roadmap phase 7 deploy). Repo `ali-moradi-design/cafe-hoor` (public,
+- Next.js server in a container (decided 2026-10-29: every Next.js site runs
+  with `output: "standalone"`; it was a static export before). Repo `ali-moradi-design/cafe-hoor` (public,
   created by the user); subdomain `cafe-hoor.ali-moradi-develop.com`.
 - Languages: English and Persian (Persian RTL; logical CSS; Vazirmatn; Persian
   digits in Persian, Latin digits in English).
@@ -54,9 +55,9 @@ local session), not in a cloud session.
 
 ## Stack (confirmed 2026-10-21)
 
-- Next.js App Router with `output: 'export'` (static HTML, deployed with the
-  roadmap's phase 7 rsync pipeline; no Node server, no middleware, no API
-  routes). Server Components by default; `'use client'` only where needed
+- Next.js App Router with `output: 'standalone'` (since 2026-10-29; before:
+  `output: 'export'`). The pages are still prerendered; the image holds only
+  `.next/standalone` and is deployed with deploy-kit. Server Components by default; `'use client'` only where needed
   (menu search, sticky tabs, lightbox, map, language switch).
 - TypeScript strict; pnpm.
 - Feature-Sliced Design: `app` (Next.js routes and providers), `views` (page
@@ -68,10 +69,11 @@ local session), not in a cloud session.
   Zod schemas at build time (English and Persian text per item).
 - i18n: typed dictionaries in `src/shared/i18n` (no `next-intl`: two
   languages and a static site do not need it), locale segments (`/fa/...`,
-  `/en/...`) with `generateStaticParams`; `/` and `/menu/` are static pages that
-  redirect to the Persian site (the table QR code points to `/menu/`).
+  `/en/...`) with `generateStaticParams`; `/` and `/menu/` redirect to the
+  Persian site with HTTP redirects in `next.config.ts` (the table QR code points
+  to `/menu/`).
 - Images: only the cafe's Instagram photos (the owner's permission covers them).
-  `next/image` cannot optimize in a static export, so `scripts/build-photos.mjs`
+  `scripts/build-photos.mjs`
   (sharp) writes AVIF/WebP/JPEG in 480/960/1600 px before every build; the
   selected originals (≤2000 px) live in `assets/photos/` and are listed in
   `content/photos.json`.

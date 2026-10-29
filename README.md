@@ -17,8 +17,8 @@ Live address (planned): `https://cafe-hoor.ali-moradi-develop.com`.
 ```bash
 pnpm install
 pnpm dev            # photos + dev server on http://localhost:3000
-pnpm build          # photos + static export to out/
-pnpm preview        # serve out/ on http://127.0.0.1:4321 (folders → index.html, like Nginx)
+pnpm build          # photos + Next.js standalone server in .next/standalone
+pnpm preview        # run that server on http://127.0.0.1:4321, like production
 pnpm lint           # ESLint, including the FSD layer rules
 pnpm typecheck
 pnpm test           # Vitest: helpers and content rules
@@ -31,8 +31,8 @@ pnpm format         # Prettier
 ```text
 content/            menu, categories, prices (USD rate), cafe info, photo list (JSON, Zod-checked)
 assets/photos/      selected Instagram photos (originals, at most 2000 px)
-scripts/            photo import/build, menu import, segment fix, local static server
-src/app/            Next.js routes: [locale]/…, redirects for / and /menu/
+scripts/            photo import/build, menu import, standalone copy step, local server
+src/app/            Next.js routes: [locale]/… (/ and /menu/ redirect in next.config.ts)
 src/views/          one composition per page
 src/widgets/        header, footer, menu board, gallery, map, visit info
 src/features/       language switch, menu search
@@ -58,6 +58,9 @@ Layers import only downward and slices on the same layer never import each other
 
 ## Deploying
 
-`out/` is plain static files. With Nginx, serve the folder and keep
-`try_files $uri $uri/ =404;`. `scripts/flatten-segments.mjs` already writes the
-route-prefetch files under the names browsers request, so no rewrites are needed.
+The site runs as a Next.js `standalone` server in a container on the VPS
+(https://cafe-hoor.ali-moradi-develop.com). The image holds only the build
+output (`.next/standalone`, see `Dockerfile`). `.github/workflows/docker.yml`
+builds it after CI passes on `main`, pushes `ghcr.io/ali-moradi-design/cafe-hoor-web:<sha>`
+and deploys it with deploy-kit. Server files: `deploy/compose.yaml`
+(`/srv/apps/cafe-hoor`, port 3103) and `deploy/nginx.conf`.

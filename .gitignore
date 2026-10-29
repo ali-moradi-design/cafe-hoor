@@ -4,8 +4,6 @@ gallery-dl.log
 
 # Dependencies and build output
 node_modules/
-dist/
-.astro/
 
 # Environment
 .env
@@ -24,7 +22,6 @@ Thumbs.db
 
 # Next.js
 .next/
-out/
 next-env.d.ts
 *.tsbuildinfo
 
